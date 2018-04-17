@@ -1,14 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
-using System.Runtime.Serialization;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace ServerX
+namespace OOAD_Final_Project
 {
-    [Serializable]
-    [DataContractAttribute(IsReference = true)]
-    public class User
+    class User
     {
         private string name;
         private string email;
@@ -17,7 +15,6 @@ namespace ServerX
         private string password;
         private string userRole;
 
-        [DataMemberAttribute]
         public string Name
         {
             get
@@ -31,7 +28,6 @@ namespace ServerX
             }
         }
 
-        [DataMemberAttribute]
         public string Email
         {
             get
@@ -45,7 +41,6 @@ namespace ServerX
             }
         }
 
-        [DataMemberAttribute]
         public string Phone
         {
             get
@@ -58,7 +53,7 @@ namespace ServerX
                 phone = value;
             }
         }
-        [DataMemberAttribute]
+
         public string Username
         {
             get
@@ -71,7 +66,7 @@ namespace ServerX
                 username = value;
             }
         }
-        [DataMemberAttribute]
+
         public string Password
         {
             get
@@ -84,7 +79,7 @@ namespace ServerX
                 password = value;
             }
         }
-        [DataMemberAttribute]
+
         public string UserRole
         {
             get
