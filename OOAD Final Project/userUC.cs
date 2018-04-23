@@ -12,6 +12,9 @@ namespace OOAD_Final_Project
 {
     public partial class userUC : UserControl
     {
+        public delegate void logoutClickEventHandler(object source, EventArgs e);
+        public event logoutClickEventHandler logoutClick;
+
         private static userUC _instance;
         public userUC()
         {
@@ -107,6 +110,19 @@ namespace OOAD_Final_Project
             else
             {
                 r.BringToFront();
+            }
+        }
+
+        private void logoutBtn_Click(object sender, EventArgs e)
+        {
+            OnlogoutClick();
+        }
+
+        public void OnlogoutClick()
+        {
+            if (logoutClick != null)
+            {
+                logoutClick(this, EventArgs.Empty);
             }
         }
     }

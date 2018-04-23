@@ -219,6 +219,7 @@ namespace OOAD_Final_Project
             {
                 r.BringToFront();
             }
+            r.logoutClick += onLoginClick;
         }
         // EVENT FUNCTIONS :: ENDS
     }
