@@ -8,7 +8,7 @@ using System.IO;
 
 namespace ServerX
 {
-    public class User: usersParent
+    public class User : usersParent
     {
         private dietPlan dietPlan;
 

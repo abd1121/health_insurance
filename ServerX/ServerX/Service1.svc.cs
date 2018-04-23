@@ -22,37 +22,37 @@ namespace ServerX
         // ******** USERDL FUNCTIONS ******** \\
         public void addUser(string name, string email, string password, string phone)
         {
-            
+            userDL.addUser(name, email, password, phone);
         }
 
         public User getUserBYEmail(string email)
         {
-            
+            return userDL.getUserBYEmail(email);
         }
 
         public User getUserBYUsername(string username)
         {
-            
+            return userDL.getUserBYUsername(username);
         }
 
         List<User> getAllUsers()
         {
-            
+            return userDL.users;
         }
 
         int getUsersCount()
         {
-            
+            return userDL.users.Count();
         }
 
         public void addCategory(string c_name)
         {
-           
+            categoryDL.addCategory(c_name);
         }
 
         public List<category> getAllCategories()
         {
-            
+            return categoryDL.getAllCategories();
         }
         // ******** USERDL FUNCTIONS END ******** \\
 
@@ -61,7 +61,7 @@ namespace ServerX
         {
             return string.Format("You entered: {0}", value);
         }
-        
+
         public CompositeType GetDataUsingDataContract(CompositeType composite)
         {
             if (composite == null)
@@ -77,73 +77,73 @@ namespace ServerX
 
         List<User> IService1.getAllUsers()
         {
-            
+            return userDL.users;
         }
 
         int IService1.getUsersCount()
         {
-            
+            return userDL.users.Count();
         }
 
         public void addRecipe(string title, string author, string date, string url, string desc, List<string> categories)
         {
-            
+            recipeDL.addRecipe(title, author, date, url, desc, categories);
         }
 
         public List<recipe> getRecipes()
         {
-            
+            return recipeDL.getRecipes();
         }
 
         public int getRecipeCount()
         {
-            
+            return recipeDL.getRecipeCount();
         }
 
         public void deleteRecipe(string index)
         {
-            
+            recipeDL.deleteRecipe(Int32.Parse(index));
         }
 
         public recipe getRecipeAT(string index)
         {
-            
+            return recipeDL.getRecipeAT(Int32.Parse(index));
         }
 
         public void generateDietPlan(User user)
         {
-            
+            userDL.generateDietPlan(user);
         }
 
         public void deleteUser(string index)
         {
-            
+            userDL.deleteUser(Int32.Parse(index));
         }
 
         public void deleteCategory(string index)
         {
-            
+            categoryDL.deleteCategory(Int32.Parse(index));
         }
-        
+
 
         void IService1.updateCategory(string index, string categoryName)
         {
-            
+            categoryDL.updateCategory(Int32.Parse(index), categoryName);
         }
 
         public void updateUser(string index, string name, string email, string password, string phone)
         {
-            
+            userDL.updateUser(Int32.Parse(index), name, email, password, phone);
         }
 
         public void updateRecipe(string index, string title, string author, string date, string url, string desc, List<string> categories)
         {
-            
+            recipeDL.updateRecipe(Int32.Parse(index), title, author, date, url, desc, categories);
         }
 
         public recipe getRandomRecipe()
         {
-           
+            return recipeDL.getRandomRecipe();
         }
     }
 }
