@@ -1,0 +1,39 @@
+D:\Study\Visual Studio\OOAD Final Project\OOAD Final Project\bin\Debug\OOAD Final Project.exe.config
+D:\Study\Visual Studio\OOAD Final Project\OOAD Final Project\bin\Debug\OOAD Final Project.exe
+D:\Study\Visual Studio\OOAD Final Project\OOAD Final Project\bin\Debug\OOAD Final Project.pdb
+D:\Study\Visual Studio\OOAD Final Project\OOAD Final Project\bin\Debug\Bunifu_UI_v1.5.3.dll
+D:\Study\Visual Studio\OOAD Final Project\OOAD Final Project\obj\Debug\OOAD_Final_Project.Properties.Resources.resources
+D:\Study\Visual Studio\OOAD Final Project\OOAD Final Project\obj\Debug\OOAD Final Project.csproj.GenerateResource.Cache
+D:\Study\Visual Studio\OOAD Final Project\OOAD Final Project\obj\Debug\OOAD Final Project.exe
+D:\Study\Visual Studio\OOAD Final Project\OOAD Final Project\obj\Debug\OOAD Final Project.pdb
+D:\Study\Visual Studio\OOAD Final Project\OOAD Final Project\obj\Debug\OOAD_Final_Project.LoginControl.resources
+D:\Study\Visual Studio\OOAD Final Project\OOAD Final Project\obj\Debug\OOAD_Final_Project.RegisterControl.resources
+D:\Study\Visual Studio\OOAD Final Project\OOAD Final Project\obj\Debug\OOAD_Final_Project.Main.resources
+D:\Study\Visual Studio\OOAD Final Project\OOAD Final Project\obj\Debug\OOAD_Final_Project.HomeControl.resources
+D:\Study\Visual Studio\OOAD Final Project\OOAD Final Project\obj\Debug\OOAD_Final_Project.resetpasswordControl.resources
+D:\Study\Visual Studio\OOAD Final Project\OOAD Final Project\obj\Debug\OOAD_Final_Project.registeredSuccessUC.resources
+D:\Study\Visual Studio\OOAD Final Project\OOAD Final Project\obj\Debug\OOAD_Final_Project.AdminUC.resources
+D:\Study\Visual Studio\OOAD Final Project\OOAD Final Project\obj\Debug\OOAD_Final_Project.Admin_Dashboard.resources
+D:\Study\Visual Studio\OOAD Final Project\OOAD Final Project\bin\Debug\OOAD Final Project.exe.manifest
+D:\Study\Visual Studio\OOAD Final Project\OOAD Final Project\bin\Debug\OOAD Final Project.application
+D:\Study\Visual Studio\OOAD Final Project\OOAD Final Project\obj\Debug\OOAD Final Project.exe.manifest
+D:\Study\Visual Studio\OOAD Final Project\OOAD Final Project\obj\Debug\OOAD Final Project.application
+D:\Study\Visual Studio\OOAD Final Project\OOAD Final Project\obj\Debug\OOAD Final Project.csprojResolveAssemblyReference.cache
+D:\Study\Visual Studio\OOAD Final Project\OOAD Final Project\obj\Debug\OOAD_Final_Project.Admin_Users.resources
+D:\Study\Visual Studio\OOAD Final Project\OOAD Final Project\obj\Debug\OOAD_Final_Project.UserView.resources
+D:\Study\Visual Studio\OOAD Final Project\OOAD Final Project\obj\Debug\OOAD_Final_Project.addnewUser.resources
+D:\Study\Visual Studio\OOAD Final Project\OOAD Final Project\obj\Debug\OOAD_Final_Project.addnewrecipe.resources
+D:\Study\Visual Studio\OOAD Final Project\OOAD Final Project\obj\Debug\OOAD_Final_Project.Admin_Recipes.resources
+D:\Study\Visual Studio\OOAD Final Project\OOAD Final Project\obj\Debug\OOAD_Final_Project.receipie_view.resources
+D:\Study\Visual Studio\OOAD Final Project\OOAD Final Project\obj\Debug\OOAD_Final_Project.addnewcategory.resources
+D:\Study\Visual Studio\OOAD Final Project\OOAD Final Project\obj\Debug\OOAD_Final_Project.Admin_Categories.resources
+D:\Study\Visual Studio\OOAD Final Project\OOAD Final Project\obj\Debug\OOAD_Final_Project.category_view.resources
+D:\Study\Visual Studio\OOAD Final Project\OOAD Final Project\obj\Debug\OOAD_Final_Project.userUC.resources
+D:\Study\Visual Studio\OOAD Final Project\OOAD Final Project\obj\Debug\OOAD_Final_Project.user_settings.resources
+D:\Study\Visual Studio\OOAD Final Project\OOAD Final Project\obj\Debug\OOAD_Final_Project.user_planner.resources
+D:\Study\Visual Studio\OOAD Final Project\OOAD Final Project\obj\Debug\OOAD_Final_Project.planner_view.resources
+D:\Study\Visual Studio\OOAD Final Project\OOAD Final Project\obj\Debug\OOAD_Final_Project.user_dashboard.resources
+D:\Study\Visual Studio\OOAD Final Project\OOAD Final Project\obj\Debug\OOAD_Final_Project.user_advance_search.resources
+D:\Study\Visual Studio\OOAD Final Project\OOAD Final Project\obj\Debug\OOAD_Final_Project.guest_user_diet.resources
+D:\Study\Visual Studio\OOAD Final Project\OOAD Final Project\obj\Debug\OOAD_Final_Project.search_bottom_grid.resources
+D:\Study\Visual Studio\OOAD Final Project\OOAD Final Project\obj\Debug\OOAD_Final_Project.search_top_grid.resources

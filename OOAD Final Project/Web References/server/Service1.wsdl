@@ -1,0 +1,423 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="Service1" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:2125/Service1.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:2125/Service1.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:2125/Service1.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/ServerX" />
+      <xsd:import schemaLocation="http://localhost:2125/Service1.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/System.Drawing" />
+      <xsd:import schemaLocation="http://localhost:2125/Service1.svc?xsd=xsd4" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import schemaLocation="http://localhost:2125/Service1.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/System.IO" />
+      <xsd:import schemaLocation="http://localhost:2125/Service1.svc?xsd=xsd6" namespace="http://schemas.datacontract.org/2004/07/System" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IService1_GetData_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetData" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetData_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetDataUsingDataContract_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDataUsingDataContract" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetDataUsingDataContract_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDataUsingDataContractResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_addUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:addUser" />
+  </wsdl:message>
+  <wsdl:message name="IService1_addUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:addUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_getUserBYEmail_InputMessage">
+    <wsdl:part name="parameters" element="tns:getUserBYEmail" />
+  </wsdl:message>
+  <wsdl:message name="IService1_getUserBYEmail_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getUserBYEmailResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_getRecipeAT_InputMessage">
+    <wsdl:part name="parameters" element="tns:getRecipeAT" />
+  </wsdl:message>
+  <wsdl:message name="IService1_getRecipeAT_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getRecipeATResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_getUserBYUsername_InputMessage">
+    <wsdl:part name="parameters" element="tns:getUserBYUsername" />
+  </wsdl:message>
+  <wsdl:message name="IService1_getUserBYUsername_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getUserBYUsernameResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_getAllUsers_InputMessage">
+    <wsdl:part name="parameters" element="tns:getAllUsers" />
+  </wsdl:message>
+  <wsdl:message name="IService1_getAllUsers_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getAllUsersResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_getUsersCount_InputMessage">
+    <wsdl:part name="parameters" element="tns:getUsersCount" />
+  </wsdl:message>
+  <wsdl:message name="IService1_getUsersCount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getUsersCountResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_addRecipe_InputMessage">
+    <wsdl:part name="parameters" element="tns:addRecipe" />
+  </wsdl:message>
+  <wsdl:message name="IService1_addRecipe_OutputMessage">
+    <wsdl:part name="parameters" element="tns:addRecipeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_getRecipes_InputMessage">
+    <wsdl:part name="parameters" element="tns:getRecipes" />
+  </wsdl:message>
+  <wsdl:message name="IService1_getRecipes_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getRecipesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_getRecipeCount_InputMessage">
+    <wsdl:part name="parameters" element="tns:getRecipeCount" />
+  </wsdl:message>
+  <wsdl:message name="IService1_getRecipeCount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getRecipeCountResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_addCategory_InputMessage">
+    <wsdl:part name="parameters" element="tns:addCategory" />
+  </wsdl:message>
+  <wsdl:message name="IService1_addCategory_OutputMessage">
+    <wsdl:part name="parameters" element="tns:addCategoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_getAllCategories_InputMessage">
+    <wsdl:part name="parameters" element="tns:getAllCategories" />
+  </wsdl:message>
+  <wsdl:message name="IService1_getAllCategories_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getAllCategoriesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_deleteRecipe_InputMessage">
+    <wsdl:part name="parameters" element="tns:deleteRecipe" />
+  </wsdl:message>
+  <wsdl:message name="IService1_deleteRecipe_OutputMessage">
+    <wsdl:part name="parameters" element="tns:deleteRecipeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_generateDietPlan_InputMessage">
+    <wsdl:part name="parameters" element="tns:generateDietPlan" />
+  </wsdl:message>
+  <wsdl:message name="IService1_generateDietPlan_OutputMessage">
+    <wsdl:part name="parameters" element="tns:generateDietPlanResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_deleteUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:deleteUser" />
+  </wsdl:message>
+  <wsdl:message name="IService1_deleteUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:deleteUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_deleteCategory_InputMessage">
+    <wsdl:part name="parameters" element="tns:deleteCategory" />
+  </wsdl:message>
+  <wsdl:message name="IService1_deleteCategory_OutputMessage">
+    <wsdl:part name="parameters" element="tns:deleteCategoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_updateCategory_InputMessage">
+    <wsdl:part name="parameters" element="tns:updateCategory" />
+  </wsdl:message>
+  <wsdl:message name="IService1_updateCategory_OutputMessage">
+    <wsdl:part name="parameters" element="tns:updateCategoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_updateUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:updateUser" />
+  </wsdl:message>
+  <wsdl:message name="IService1_updateUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:updateUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_getRandomRecipe_InputMessage">
+    <wsdl:part name="parameters" element="tns:getRandomRecipe" />
+  </wsdl:message>
+  <wsdl:message name="IService1_getRandomRecipe_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getRandomRecipeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_updateRecipe_InputMessage">
+    <wsdl:part name="parameters" element="tns:updateRecipe" />
+  </wsdl:message>
+  <wsdl:message name="IService1_updateRecipe_OutputMessage">
+    <wsdl:part name="parameters" element="tns:updateRecipeResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IService1">
+    <wsdl:operation name="GetData">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetData" message="tns:IService1_GetData_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetDataResponse" message="tns:IService1_GetData_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDataUsingDataContract">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetDataUsingDataContract" message="tns:IService1_GetDataUsingDataContract_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetDataUsingDataContractResponse" message="tns:IService1_GetDataUsingDataContract_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="addUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/addUser" message="tns:IService1_addUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/addUserResponse" message="tns:IService1_addUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getUserBYEmail">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/getUserBYEmail" message="tns:IService1_getUserBYEmail_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/getUserBYEmailResponse" message="tns:IService1_getUserBYEmail_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getRecipeAT">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/getRecipeAT" message="tns:IService1_getRecipeAT_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/getRecipeATResponse" message="tns:IService1_getRecipeAT_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getUserBYUsername">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/getUserBYUsername" message="tns:IService1_getUserBYUsername_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/getUserBYUsernameResponse" message="tns:IService1_getUserBYUsername_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getAllUsers">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/getAllUsers" message="tns:IService1_getAllUsers_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/getAllUsersResponse" message="tns:IService1_getAllUsers_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getUsersCount">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/getUsersCount" message="tns:IService1_getUsersCount_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/getUsersCountResponse" message="tns:IService1_getUsersCount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="addRecipe">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/addRecipe" message="tns:IService1_addRecipe_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/addRecipeResponse" message="tns:IService1_addRecipe_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getRecipes">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/getRecipes" message="tns:IService1_getRecipes_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/getRecipesResponse" message="tns:IService1_getRecipes_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getRecipeCount">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/getRecipeCount" message="tns:IService1_getRecipeCount_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/getRecipeCountResponse" message="tns:IService1_getRecipeCount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="addCategory">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/addCategory" message="tns:IService1_addCategory_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/addCategoryResponse" message="tns:IService1_addCategory_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getAllCategories">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/getAllCategories" message="tns:IService1_getAllCategories_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/getAllCategoriesResponse" message="tns:IService1_getAllCategories_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="deleteRecipe">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/deleteRecipe" message="tns:IService1_deleteRecipe_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/deleteRecipeResponse" message="tns:IService1_deleteRecipe_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="generateDietPlan">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/generateDietPlan" message="tns:IService1_generateDietPlan_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/generateDietPlanResponse" message="tns:IService1_generateDietPlan_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="deleteUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/deleteUser" message="tns:IService1_deleteUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/deleteUserResponse" message="tns:IService1_deleteUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="deleteCategory">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/deleteCategory" message="tns:IService1_deleteCategory_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/deleteCategoryResponse" message="tns:IService1_deleteCategory_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="updateCategory">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/updateCategory" message="tns:IService1_updateCategory_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/updateCategoryResponse" message="tns:IService1_updateCategory_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="updateUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/updateUser" message="tns:IService1_updateUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/updateUserResponse" message="tns:IService1_updateUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getRandomRecipe">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/getRandomRecipe" message="tns:IService1_getRandomRecipe_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/getRandomRecipeResponse" message="tns:IService1_getRandomRecipe_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="updateRecipe">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/updateRecipe" message="tns:IService1_updateRecipe_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/updateRecipeResponse" message="tns:IService1_updateRecipe_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IService1" type="tns:IService1">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetData">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDataUsingDataContract">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetDataUsingDataContract" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addUser">
+      <soap:operation soapAction="http://tempuri.org/IService1/addUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getUserBYEmail">
+      <soap:operation soapAction="http://tempuri.org/IService1/getUserBYEmail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getRecipeAT">
+      <soap:operation soapAction="http://tempuri.org/IService1/getRecipeAT" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getUserBYUsername">
+      <soap:operation soapAction="http://tempuri.org/IService1/getUserBYUsername" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAllUsers">
+      <soap:operation soapAction="http://tempuri.org/IService1/getAllUsers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getUsersCount">
+      <soap:operation soapAction="http://tempuri.org/IService1/getUsersCount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addRecipe">
+      <soap:operation soapAction="http://tempuri.org/IService1/addRecipe" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getRecipes">
+      <soap:operation soapAction="http://tempuri.org/IService1/getRecipes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getRecipeCount">
+      <soap:operation soapAction="http://tempuri.org/IService1/getRecipeCount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addCategory">
+      <soap:operation soapAction="http://tempuri.org/IService1/addCategory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAllCategories">
+      <soap:operation soapAction="http://tempuri.org/IService1/getAllCategories" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteRecipe">
+      <soap:operation soapAction="http://tempuri.org/IService1/deleteRecipe" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="generateDietPlan">
+      <soap:operation soapAction="http://tempuri.org/IService1/generateDietPlan" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteUser">
+      <soap:operation soapAction="http://tempuri.org/IService1/deleteUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteCategory">
+      <soap:operation soapAction="http://tempuri.org/IService1/deleteCategory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateCategory">
+      <soap:operation soapAction="http://tempuri.org/IService1/updateCategory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateUser">
+      <soap:operation soapAction="http://tempuri.org/IService1/updateUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getRandomRecipe">
+      <soap:operation soapAction="http://tempuri.org/IService1/getRandomRecipe" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateRecipe">
+      <soap:operation soapAction="http://tempuri.org/IService1/updateRecipe" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Service1">
+    <wsdl:port name="BasicHttpBinding_IService1" binding="tns:BasicHttpBinding_IService1">
+      <soap:address location="http://localhost:2125/Service1.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
