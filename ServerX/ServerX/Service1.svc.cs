@@ -145,5 +145,10 @@ namespace ServerX
         {
             return recipeDL.getRandomRecipe();
         }
+
+        public void save_user_settings(User u, string name, string email, string password, string phone, string username)
+        {
+            userDL.save_user_settings(u, name, email, password, phone, username);
+        }
     }
 }

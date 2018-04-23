@@ -37,3 +37,43 @@ D:\Study\Visual Studio\OOAD Final Project\OOAD Final Project\obj\Debug\OOAD_Fina
 D:\Study\Visual Studio\OOAD Final Project\OOAD Final Project\obj\Debug\OOAD_Final_Project.guest_user_diet.resources
 D:\Study\Visual Studio\OOAD Final Project\OOAD Final Project\obj\Debug\OOAD_Final_Project.search_bottom_grid.resources
 D:\Study\Visual Studio\OOAD Final Project\OOAD Final Project\obj\Debug\OOAD_Final_Project.search_top_grid.resources
+C:\Github Project\health_insurance\OOAD Final Project\bin\Debug\OOAD Final Project.exe.config
+C:\Github Project\health_insurance\OOAD Final Project\obj\Debug\OOAD Final Project.exe
+C:\Github Project\health_insurance\OOAD Final Project\obj\Debug\OOAD Final Project.pdb
+C:\Github Project\health_insurance\OOAD Final Project\obj\Debug\OOAD Final Project.csprojResolveAssemblyReference.cache
+C:\Github Project\health_insurance\OOAD Final Project\obj\Debug\OOAD_Final_Project.guest_user_diet.resources
+C:\Github Project\health_insurance\OOAD Final Project\obj\Debug\OOAD_Final_Project.search_bottom_grid.resources
+C:\Github Project\health_insurance\OOAD Final Project\obj\Debug\OOAD_Final_Project.search_top_grid.resources
+C:\Github Project\health_insurance\OOAD Final Project\obj\Debug\OOAD_Final_Project.user_settings.resources
+C:\Github Project\health_insurance\OOAD Final Project\obj\Debug\OOAD_Final_Project.addnewcategory.resources
+C:\Github Project\health_insurance\OOAD Final Project\obj\Debug\OOAD_Final_Project.addnewrecipe.resources
+C:\Github Project\health_insurance\OOAD Final Project\obj\Debug\OOAD_Final_Project.addnewUser.resources
+C:\Github Project\health_insurance\OOAD Final Project\obj\Debug\OOAD_Final_Project.AdminUC.resources
+C:\Github Project\health_insurance\OOAD Final Project\obj\Debug\OOAD_Final_Project.Admin_Categories.resources
+C:\Github Project\health_insurance\OOAD Final Project\obj\Debug\OOAD_Final_Project.Admin_Dashboard.resources
+C:\Github Project\health_insurance\OOAD Final Project\obj\Debug\OOAD_Final_Project.Admin_Recipes.resources
+C:\Github Project\health_insurance\OOAD Final Project\obj\Debug\OOAD_Final_Project.Admin_Users.resources
+C:\Github Project\health_insurance\OOAD Final Project\obj\Debug\OOAD_Final_Project.user_advance_search.resources
+C:\Github Project\health_insurance\OOAD Final Project\obj\Debug\OOAD_Final_Project.category_view.resources
+C:\Github Project\health_insurance\OOAD Final Project\obj\Debug\OOAD_Final_Project.user_planner.resources
+C:\Github Project\health_insurance\OOAD Final Project\obj\Debug\OOAD_Final_Project.HomeControl.resources
+C:\Github Project\health_insurance\OOAD Final Project\obj\Debug\OOAD_Final_Project.Main.resources
+C:\Github Project\health_insurance\OOAD Final Project\obj\Debug\OOAD_Final_Project.planner_view.resources
+C:\Github Project\health_insurance\OOAD Final Project\obj\Debug\OOAD_Final_Project.Properties.Resources.resources
+C:\Github Project\health_insurance\OOAD Final Project\obj\Debug\OOAD_Final_Project.LoginControl.resources
+C:\Github Project\health_insurance\OOAD Final Project\obj\Debug\OOAD_Final_Project.receipie_view.resources
+C:\Github Project\health_insurance\OOAD Final Project\obj\Debug\OOAD_Final_Project.RegisterControl.resources
+C:\Github Project\health_insurance\OOAD Final Project\obj\Debug\OOAD_Final_Project.registeredSuccessUC.resources
+C:\Github Project\health_insurance\OOAD Final Project\obj\Debug\OOAD_Final_Project.resetpasswordControl.resources
+C:\Github Project\health_insurance\OOAD Final Project\obj\Debug\OOAD_Final_Project.userUC.resources
+C:\Github Project\health_insurance\OOAD Final Project\obj\Debug\OOAD_Final_Project.UserView.resources
+C:\Github Project\health_insurance\OOAD Final Project\obj\Debug\OOAD_Final_Project.user_dashboard.resources
+C:\Github Project\health_insurance\OOAD Final Project\obj\Debug\OOAD Final Project.csproj.GenerateResource.Cache
+C:\Github Project\health_insurance\OOAD Final Project\bin\Debug\OOAD Final Project.exe.manifest
+C:\Github Project\health_insurance\OOAD Final Project\bin\Debug\OOAD Final Project.application
+C:\Github Project\health_insurance\OOAD Final Project\bin\Debug\OOAD Final Project.exe
+C:\Github Project\health_insurance\OOAD Final Project\bin\Debug\OOAD Final Project.pdb
+C:\Github Project\health_insurance\OOAD Final Project\bin\Debug\Bunifu_UI_v1.5.3.dll
+C:\Github Project\health_insurance\OOAD Final Project\obj\Debug\OOAD Final Project.exe.manifest
+C:\Github Project\health_insurance\OOAD Final Project\obj\Debug\OOAD Final Project.application
+C:\Github Project\health_insurance\OOAD Final Project\obj\Debug\OOAD_Final_Project.register_user_diet.resources

@@ -34,8 +34,8 @@
             this.emailtxtbox = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.phonetxtbox = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.nametxtbox = new Bunifu.Framework.UI.BunifuMaterialTextbox();
-            this.select_dietDropDown = new Bunifu.Framework.UI.BunifuDropdown();
             this.save_changesBtn = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // passtxtbox
@@ -133,26 +133,11 @@
             this.nametxtbox.TabIndex = 5;
             this.nametxtbox.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
-            // select_dietDropDown
-            // 
-            this.select_dietDropDown.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(64)))), ((int)(((byte)(83)))));
-            this.select_dietDropDown.BorderRadius = 3;
-            this.select_dietDropDown.DisabledColor = System.Drawing.Color.Gray;
-            this.select_dietDropDown.ForeColor = System.Drawing.Color.White;
-            this.select_dietDropDown.Items = new string[0];
-            this.select_dietDropDown.Location = new System.Drawing.Point(23, 293);
-            this.select_dietDropDown.Name = "select_dietDropDown";
-            this.select_dietDropDown.NomalColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(64)))), ((int)(((byte)(83)))));
-            this.select_dietDropDown.onHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(64)))), ((int)(((byte)(83)))));
-            this.select_dietDropDown.selectedIndex = -1;
-            this.select_dietDropDown.Size = new System.Drawing.Size(217, 35);
-            this.select_dietDropDown.TabIndex = 10;
-            // 
             // save_changesBtn
             // 
             this.save_changesBtn.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
             this.save_changesBtn.AutoValidate = System.Windows.Forms.AutoValidate.Disable;
-            this.save_changesBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(83)))), ((int)(((byte)(94)))));
+            this.save_changesBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(104)))), ((int)(((byte)(89)))));
             this.save_changesBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.save_changesBtn.BorderRadius = 5;
             this.save_changesBtn.ButtonText = "Save Changes";
@@ -184,21 +169,32 @@
             this.save_changesBtn.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.save_changesBtn.Textcolor = System.Drawing.Color.White;
             this.save_changesBtn.TextFont = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.save_changesBtn.Click += new System.EventHandler(this.save_changesBtn_Click);
             // 
-            // account_SettingsUC
+            // comboBox1
+            // 
+            this.comboBox1.Font = new System.Drawing.Font("Century Gothic", 12.75F);
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(23, 299);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(264, 29);
+            this.comboBox1.TabIndex = 12;
+            // 
+            // user_settings
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.save_changesBtn);
-            this.Controls.Add(this.select_dietDropDown);
             this.Controls.Add(this.passtxtbox);
             this.Controls.Add(this.usernametxtbox);
             this.Controls.Add(this.emailtxtbox);
             this.Controls.Add(this.phonetxtbox);
             this.Controls.Add(this.nametxtbox);
-            this.Name = "account_SettingsUC";
+            this.Name = "user_settings";
             this.Size = new System.Drawing.Size(633, 406);
+            this.Load += new System.EventHandler(this.user_settings_Load);
             this.ResumeLayout(false);
 
         }
@@ -210,7 +206,7 @@
         private Bunifu.Framework.UI.BunifuMaterialTextbox emailtxtbox;
         private Bunifu.Framework.UI.BunifuMaterialTextbox phonetxtbox;
         private Bunifu.Framework.UI.BunifuMaterialTextbox nametxtbox;
-        private Bunifu.Framework.UI.BunifuDropdown select_dietDropDown;
         private Bunifu.Framework.UI.BunifuFlatButton save_changesBtn;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }

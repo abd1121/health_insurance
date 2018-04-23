@@ -12,6 +12,9 @@ namespace OOAD_Final_Project
 {
     public partial class user_dashboard : UserControl
     {
+        public delegate void whatEatClickEventhandler(object source, EventArgs e);
+        public event whatEatClickEventhandler whatEatClick;
+
         private static user_dashboard _instance;
         public user_dashboard()
         {
@@ -34,6 +37,17 @@ namespace OOAD_Final_Project
         {
             user_advance_search frm = new user_advance_search();
             frm.Show();
+        }
+
+        private void searchBtn_Click(object sender, EventArgs e)
+        {
+            OnwhatEatClick();
+        }
+
+        public void OnwhatEatClick() {
+            if (whatEatClick !=null) {
+                whatEatClick(this, EventArgs.Empty);
+            }
         }
     }
 }

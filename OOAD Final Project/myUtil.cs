@@ -8,6 +8,6 @@ namespace OOAD_Final_Project
 {
     class myUtil
     {
-        public static server.usersParent loggedIN = null;
+        public static server.User loggedIN = null;
     }
 }

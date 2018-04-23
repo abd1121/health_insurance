@@ -151,7 +151,7 @@
             this.Controls.Add(this.recipe_description);
             this.Controls.Add(this.recipe_thumbnail);
             this.Name = "search_top_grid";
-            this.Size = new System.Drawing.Size(783, 123);
+            this.Size = new System.Drawing.Size(615, 123);
             ((System.ComponentModel.ISupportInitialize)(this.recipe_thumbnail)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

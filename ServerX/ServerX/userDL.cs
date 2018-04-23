@@ -105,5 +105,18 @@ namespace ServerX
             user.DietPlan.Saturday = random_recpies[5];
             user.DietPlan.Sunday = random_recpies[6];
         }
+
+        public static void save_user_settings(User u, string name, string email, string password, string phone, string username) {
+            foreach(User user in users) {
+                if(user.Email == email && user.Password == password) {
+                    user.Name = name;
+                    user.Email = email;
+                    user.Password = password;
+                    user.Phone = phone;
+                    user.Username = username;
+                    break;
+                }
+            }
+        }
     }
 }

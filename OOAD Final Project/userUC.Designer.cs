@@ -41,10 +41,8 @@
             this.dashboardBtn = new Bunifu.Framework.UI.BunifuFlatButton();
             this.container = new System.Windows.Forms.Panel();
             this.userprofileRound = new Bunifu.Framework.UI.BunifuElipse(this.components);
-            this.user_dashboard1 = new OOAD_Final_Project.user_dashboard();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.userProfile)).BeginInit();
-            this.container.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -252,7 +250,6 @@
             // 
             // container
             // 
-            this.container.Controls.Add(this.user_dashboard1);
             this.container.Location = new System.Drawing.Point(198, 4);
             this.container.Name = "container";
             this.container.Size = new System.Drawing.Size(633, 409);
@@ -262,14 +259,6 @@
             // 
             this.userprofileRound.ElipseRadius = 5;
             this.userprofileRound.TargetControl = this.userProfile;
-            // 
-            // user_dashboard1
-            // 
-            this.user_dashboard1.BackColor = System.Drawing.Color.White;
-            this.user_dashboard1.Location = new System.Drawing.Point(0, 0);
-            this.user_dashboard1.Name = "user_dashboard1";
-            this.user_dashboard1.Size = new System.Drawing.Size(633, 409);
-            this.user_dashboard1.TabIndex = 0;
             // 
             // userUC
             // 
@@ -283,7 +272,6 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.userProfile)).EndInit();
-            this.container.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -301,6 +289,5 @@
         private Bunifu.Framework.UI.BunifuFlatButton dashboardBtn;
         private System.Windows.Forms.Panel container;
         private Bunifu.Framework.UI.BunifuElipse userprofileRound;
-        private user_dashboard user_dashboard1;
     }
 }

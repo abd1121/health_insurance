@@ -87,6 +87,12 @@
     <Compile Include="guest_user_diet.Designer.cs">
       <DependentUpon>guest_user_diet.cs</DependentUpon>
     </Compile>
+    <Compile Include="register_user_diet.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="register_user_diet.Designer.cs">
+      <DependentUpon>register_user_diet.cs</DependentUpon>
+    </Compile>
     <Compile Include="search_bottom_grid.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -249,6 +255,9 @@
     </Compile>
     <EmbeddedResource Include="guest_user_diet.resx">
       <DependentUpon>guest_user_diet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="register_user_diet.resx">
+      <DependentUpon>register_user_diet.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="search_bottom_grid.resx">
       <DependentUpon>search_bottom_grid.cs</DependentUpon>

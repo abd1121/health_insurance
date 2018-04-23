@@ -16,6 +16,18 @@ namespace OOAD_Final_Project
         public userUC()
         {
             InitializeComponent();
+
+            user_dashboard r = user_dashboard.Instance;
+            if (!container.Controls.Contains(r))
+            {
+                container.Controls.Add(r);
+                r.BringToFront();
+            }
+            else
+            {
+                r.BringToFront();
+            }
+            r.whatEatClick += OnwhatEatClick;
         }
 
         public static userUC Instance
@@ -37,6 +49,20 @@ namespace OOAD_Final_Project
             btnActiveSide.BringToFront();
 
             user_dashboard r = user_dashboard.Instance;
+            if (!container.Controls.Contains(r))
+            {
+                container.Controls.Add(r);
+                r.BringToFront();
+            }
+            else
+            {
+                r.BringToFront();
+            }
+            r.whatEatClick += OnwhatEatClick;
+        }
+
+        public void OnwhatEatClick(object source, EventArgs e) {
+            register_user_diet r = new register_user_diet();
             if (!container.Controls.Contains(r))
             {
                 container.Controls.Add(r);

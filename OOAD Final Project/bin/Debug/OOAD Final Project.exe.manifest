@@ -54,14 +54,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="OOAD Final Project.exe" size="4391920">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="OOAD Final Project.exe" size="4395504">
       <assemblyIdentity name="OOAD Final Project" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>Se5LqARODtCbdgHy+/yYX6J5k0aWWXDX4X7Vd/czYL0=</dsig:DigestValue>
+        <dsig:DigestValue>uTgBg7MN1b3ebtUNlf6PJ5pZIa8fVpmaPZxCmHNLq3Y=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

@@ -82,6 +82,8 @@ namespace ServerX
         [OperationContract]
         void updateRecipe(string index, string title, string author, string date, string url, string desc, List<string> categories);
 
+        [OperationContract]
+        void save_user_settings(User u, string name, string email, string password, string phone, string username);
         // ******** USERDL FUNCTIONS ******** \\
         // ******** MY FUNCTIONS (CUSTOM ADDED):: END ******** \\
     }

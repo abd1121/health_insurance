@@ -75,7 +75,7 @@ namespace OOAD_Final_Project
             {
                 server.Service1 myServer = new server.Service1();
 
-                server.usersParent user = new server.usersParent();
+                server.User user = new server.User();
                 user = myServer.getUserBYEmail(email);
                 myUtil.loggedIN = user;
                 if (user != null)

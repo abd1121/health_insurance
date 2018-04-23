@@ -68,6 +68,7 @@
             this.searchBtn.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.searchBtn.Textcolor = System.Drawing.Color.White;
             this.searchBtn.TextFont = new System.Drawing.Font("Century Gothic", 12F);
+            this.searchBtn.Click += new System.EventHandler(this.searchBtn_Click);
             // 
             // searchLbl
             // 
