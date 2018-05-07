@@ -22,10 +22,7 @@ namespace OOAD_Final_Project
         {
             get
             {
-                if (_instance == null)
-                {
-                    _instance = new user_planner();
-                }
+                _instance = new user_planner();
                 return _instance;
             }
 
@@ -36,9 +33,24 @@ namespace OOAD_Final_Project
 
         }
 
+        public void loadPlans()
+        {
+            planner_view pv = new planner_view();
+            dietPlanContainer.Controls.Add(pv);
+        }
         private void dietPlanBtn_Click(object sender, EventArgs e)
         {
-            
+            server.Service1 myServer = new server.Service1();
+            myUtil.loggedIN = myServer.generateDietPlan(myUtil.loggedIN);
+            loadPlans();
+        }
+
+        private void user_planner_Load(object sender, EventArgs e)
+        {
+            if(myUtil.loggedIN.DietPlan != null)
+            {
+                loadPlans();
+            }
         }
     }
 }

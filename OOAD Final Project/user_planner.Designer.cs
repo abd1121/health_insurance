@@ -86,6 +86,7 @@
             this.Controls.Add(this.dietPlanBtn);
             this.Name = "user_planner";
             this.Size = new System.Drawing.Size(633, 406);
+            this.Load += new System.EventHandler(this.user_planner_Load);
             this.ResumeLayout(false);
 
         }
