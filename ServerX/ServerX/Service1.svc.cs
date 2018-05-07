@@ -16,13 +16,13 @@ namespace ServerX
         // ******** MY FUNCTIONS (CUSTOM ADDED) ******** \\
         Service1()
         {
-            this.addUser("Usaid Rahman", "admin", "123", "03322652270");
+            userDL.addAdmin("Usaid Rahman", "admin", "123", "03322652270");
         }
 
         // ******** USERDL FUNCTIONS ******** \\
-        public void addUser(string name, string email, string password, string phone)
+        public void addUser(string name, string email, string password, string phone, string profile)
         {
-            userDL.addUser(name, email, password, phone);
+            userDL.addUser(name, email, password, phone, profile);
         }
 
         public User getUserBYEmail(string email)
@@ -44,6 +44,7 @@ namespace ServerX
         {
             return userDL.users.Count();
         }
+
 
         public void addCategory(string c_name)
         {
@@ -85,9 +86,9 @@ namespace ServerX
             return userDL.users.Count();
         }
 
-        public void addRecipe(string title, string author, string date, string url, string desc, List<string> categories)
+        public void addRecipe(string title, string author, string date, string url, string desc, List<string> categories, string thumb)
         {
-            recipeDL.addRecipe(title, author, date, url, desc, categories);
+            recipeDL.addRecipe(title, author, date, url, desc, categories, thumb);
         }
 
         public List<recipe> getRecipes()
@@ -145,10 +146,28 @@ namespace ServerX
         {
             return recipeDL.getRandomRecipe();
         }
-
+        public recipe getRandomRecipeByCategory(string category)
+        {
+            return recipeDL.getRandomRecipeByCategory(category);
+        }
         public void save_user_settings(User u, string name, string email, string password, string phone, string username)
         {
             userDL.save_user_settings(u, name, email, password, phone, username);
+        }
+
+        public void addAdmin(string name, string email, string password, string phone)
+        {
+            userDL.addAdmin(name, email, password, phone);
+        }
+
+        User IService1.generateDietPlan(User user)
+        {
+            return userDL.generateDietPlan(user);
+        }
+
+        public recipe getRandomRecipeByCateegory(string category)
+        {
+            return recipeDL.getRandomRecipeByCategory(category);
         }
     }
 }

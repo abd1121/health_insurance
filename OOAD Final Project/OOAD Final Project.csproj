@@ -81,11 +81,25 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AdvanceWhatEatEventArgs.cs" />
     <Compile Include="guest_user_diet.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="guest_user_diet.Designer.cs">
       <DependentUpon>guest_user_diet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="load_recipe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="load_recipe.Designer.cs">
+      <DependentUpon>load_recipe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RecipeEventArgs.cs" />
+    <Compile Include="recipe_details_view.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="recipe_details_view.Designer.cs">
+      <DependentUpon>recipe_details_view.cs</DependentUpon>
     </Compile>
     <Compile Include="register_user_diet.cs">
       <SubType>UserControl</SubType>
@@ -104,6 +118,12 @@
     </Compile>
     <Compile Include="search_top_grid.Designer.cs">
       <DependentUpon>search_top_grid.cs</DependentUpon>
+    </Compile>
+    <Compile Include="user_details_view.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="user_details_view.Designer.cs">
+      <DependentUpon>user_details_view.cs</DependentUpon>
     </Compile>
     <Compile Include="user_settings.cs">
       <SubType>UserControl</SubType>
@@ -256,6 +276,12 @@
     <EmbeddedResource Include="guest_user_diet.resx">
       <DependentUpon>guest_user_diet.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="load_recipe.resx">
+      <DependentUpon>load_recipe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="recipe_details_view.resx">
+      <DependentUpon>recipe_details_view.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="register_user_diet.resx">
       <DependentUpon>register_user_diet.cs</DependentUpon>
     </EmbeddedResource>
@@ -264,6 +290,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="search_top_grid.resx">
       <DependentUpon>search_top_grid.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="user_details_view.resx">
+      <DependentUpon>user_details_view.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="user_settings.resx">
       <DependentUpon>user_settings.cs</DependentUpon>
@@ -380,15 +409,6 @@
     <None Include="Web References\server\Service12.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Web References\server\Service13.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Web References\server\Service14.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Web References\server\Service15.xsd">
-      <SubType>Designer</SubType>
-    </None>
     <None Include="Web References\server\User.datasource">
       <DependentUpon>Reference.map</DependentUpon>
     </None>
@@ -441,6 +461,25 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Web References\server\Service1.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="AxShockwaveFlashObjects">
+      <Guid>{D27CDB6B-AE6D-11CF-96B8-444553540000}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>aximp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="ShockwaveFlashObjects">
+      <Guid>{D27CDB6B-AE6D-11CF-96B8-444553540000}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

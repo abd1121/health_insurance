@@ -30,10 +30,10 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(receipie_view));
             this.bunifuCards1 = new Bunifu.Framework.UI.BunifuCards();
+            this.deleteBtn = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.bunifuFlatButton1 = new Bunifu.Framework.UI.BunifuFlatButton();
             this.recipeTitle = new System.Windows.Forms.Label();
             this.recipeImage = new System.Windows.Forms.PictureBox();
-            this.bunifuFlatButton1 = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.deleteBtn = new Bunifu.Framework.UI.BunifuFlatButton();
             this.bunifuCards1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.recipeImage)).BeginInit();
             this.SuspendLayout();
@@ -56,24 +56,42 @@
             this.bunifuCards1.Size = new System.Drawing.Size(185, 146);
             this.bunifuCards1.TabIndex = 0;
             // 
-            // recipeTitle
+            // deleteBtn
             // 
-            this.recipeTitle.AutoSize = true;
-            this.recipeTitle.Font = new System.Drawing.Font("Century Gothic", 10.25F);
-            this.recipeTitle.Location = new System.Drawing.Point(3, 119);
-            this.recipeTitle.Name = "recipeTitle";
-            this.recipeTitle.Size = new System.Drawing.Size(174, 19);
-            this.recipeTitle.TabIndex = 2;
-            this.recipeTitle.Text = "Receipie Title Goes Here";
-            // 
-            // recipeImage
-            // 
-            this.recipeImage.Image = ((System.Drawing.Image)(resources.GetObject("recipeImage.Image")));
-            this.recipeImage.Location = new System.Drawing.Point(3, 8);
-            this.recipeImage.Name = "recipeImage";
-            this.recipeImage.Size = new System.Drawing.Size(179, 108);
-            this.recipeImage.TabIndex = 1;
-            this.recipeImage.TabStop = false;
+            this.deleteBtn.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(64)))), ((int)(((byte)(83)))));
+            this.deleteBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(112)))), ((int)(((byte)(99)))));
+            this.deleteBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.deleteBtn.BorderRadius = 5;
+            this.deleteBtn.ButtonText = "Delete";
+            this.deleteBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.deleteBtn.DisabledColor = System.Drawing.Color.Gray;
+            this.deleteBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(182)))), ((int)(((byte)(184)))));
+            this.deleteBtn.Iconcolor = System.Drawing.Color.Transparent;
+            this.deleteBtn.Iconimage = null;
+            this.deleteBtn.Iconimage_right = null;
+            this.deleteBtn.Iconimage_right_Selected = null;
+            this.deleteBtn.Iconimage_Selected = null;
+            this.deleteBtn.IconMarginLeft = 0;
+            this.deleteBtn.IconMarginRight = 0;
+            this.deleteBtn.IconRightVisible = true;
+            this.deleteBtn.IconRightZoom = 0D;
+            this.deleteBtn.IconVisible = true;
+            this.deleteBtn.IconZoom = 40D;
+            this.deleteBtn.IsTab = true;
+            this.deleteBtn.Location = new System.Drawing.Point(112, 84);
+            this.deleteBtn.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.deleteBtn.Name = "deleteBtn";
+            this.deleteBtn.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(112)))), ((int)(((byte)(99)))));
+            this.deleteBtn.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(64)))), ((int)(((byte)(83)))));
+            this.deleteBtn.OnHoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(237)))), ((int)(((byte)(237)))));
+            this.deleteBtn.selected = false;
+            this.deleteBtn.Size = new System.Drawing.Size(68, 30);
+            this.deleteBtn.TabIndex = 10;
+            this.deleteBtn.Text = "Delete";
+            this.deleteBtn.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.deleteBtn.Textcolor = System.Drawing.Color.White;
+            this.deleteBtn.TextFont = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.deleteBtn.Click += new System.EventHandler(this.deleteBtn_Click);
             // 
             // bunifuFlatButton1
             // 
@@ -112,42 +130,29 @@
             this.bunifuFlatButton1.TextFont = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunifuFlatButton1.Click += new System.EventHandler(this.bunifuFlatButton1_Click);
             // 
-            // deleteBtn
+            // recipeTitle
             // 
-            this.deleteBtn.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(64)))), ((int)(((byte)(83)))));
-            this.deleteBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(112)))), ((int)(((byte)(99)))));
-            this.deleteBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.deleteBtn.BorderRadius = 5;
-            this.deleteBtn.ButtonText = "Delete";
-            this.deleteBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.deleteBtn.DisabledColor = System.Drawing.Color.Gray;
-            this.deleteBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(182)))), ((int)(((byte)(184)))));
-            this.deleteBtn.Iconcolor = System.Drawing.Color.Transparent;
-            this.deleteBtn.Iconimage = null;
-            this.deleteBtn.Iconimage_right = null;
-            this.deleteBtn.Iconimage_right_Selected = null;
-            this.deleteBtn.Iconimage_Selected = null;
-            this.deleteBtn.IconMarginLeft = 0;
-            this.deleteBtn.IconMarginRight = 0;
-            this.deleteBtn.IconRightVisible = true;
-            this.deleteBtn.IconRightZoom = 0D;
-            this.deleteBtn.IconVisible = true;
-            this.deleteBtn.IconZoom = 40D;
-            this.deleteBtn.IsTab = true;
-            this.deleteBtn.Location = new System.Drawing.Point(112, 84);
-            this.deleteBtn.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.deleteBtn.Name = "deleteBtn";
-            this.deleteBtn.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(112)))), ((int)(((byte)(99)))));
-            this.deleteBtn.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(64)))), ((int)(((byte)(83)))));
-            this.deleteBtn.OnHoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(237)))), ((int)(((byte)(237)))));
-            this.deleteBtn.selected = false;
-            this.deleteBtn.Size = new System.Drawing.Size(68, 30);
-            this.deleteBtn.TabIndex = 10;
-            this.deleteBtn.Text = "Delete";
-            this.deleteBtn.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.deleteBtn.Textcolor = System.Drawing.Color.White;
-            this.deleteBtn.TextFont = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.deleteBtn.Click += new System.EventHandler(this.deleteBtn_Click);
+            this.recipeTitle.AutoSize = true;
+            this.recipeTitle.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.recipeTitle.Font = new System.Drawing.Font("Century Gothic", 10.25F);
+            this.recipeTitle.Location = new System.Drawing.Point(3, 119);
+            this.recipeTitle.Name = "recipeTitle";
+            this.recipeTitle.Size = new System.Drawing.Size(174, 19);
+            this.recipeTitle.TabIndex = 2;
+            this.recipeTitle.Text = "Receipie Title Goes Here";
+            this.recipeTitle.Click += new System.EventHandler(this.recipeTitle_Click);
+            // 
+            // recipeImage
+            // 
+            this.recipeImage.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.recipeImage.Image = ((System.Drawing.Image)(resources.GetObject("recipeImage.Image")));
+            this.recipeImage.Location = new System.Drawing.Point(3, 8);
+            this.recipeImage.Name = "recipeImage";
+            this.recipeImage.Size = new System.Drawing.Size(179, 108);
+            this.recipeImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.recipeImage.TabIndex = 1;
+            this.recipeImage.TabStop = false;
+            this.recipeImage.Click += new System.EventHandler(this.recipeImage_Click);
             // 
             // receipie_view
             // 

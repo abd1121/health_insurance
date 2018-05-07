@@ -209,6 +209,7 @@ namespace OOAD_Final_Project
 
         public void onUserLogin(object source, EventArgs e)
         {
+            
             userUC r = userUC.Instance;
             if (!contentPanel.Controls.Contains(r))
             {

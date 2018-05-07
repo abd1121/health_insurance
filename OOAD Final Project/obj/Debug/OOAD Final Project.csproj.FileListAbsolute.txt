@@ -117,3 +117,11 @@ F:\Github Project\health_insurance\OOAD Final Project\obj\Debug\OOAD_Final_Proje
 F:\Github Project\health_insurance\OOAD Final Project\obj\Debug\OOAD Final Project.csproj.GenerateResource.Cache
 F:\Github Project\health_insurance\OOAD Final Project\obj\Debug\OOAD Final Project.exe.manifest
 F:\Github Project\health_insurance\OOAD Final Project\obj\Debug\OOAD Final Project.application
+F:\Github Project\health_insurance\OOAD Final Project\bin\Debug\Interop.ShockwaveFlashObjects.dll
+F:\Github Project\health_insurance\OOAD Final Project\bin\Debug\AxInterop.ShockwaveFlashObjects.dll
+F:\Github Project\health_insurance\OOAD Final Project\obj\Debug\Interop.ShockwaveFlashObjects.dll
+F:\Github Project\health_insurance\OOAD Final Project\obj\Debug\AxInterop.ShockwaveFlashObjects.dll
+F:\Github Project\health_insurance\OOAD Final Project\obj\Debug\OOAD Final Project.csproj.ResolveComReference.cache
+F:\Github Project\health_insurance\OOAD Final Project\obj\Debug\OOAD_Final_Project.load_recipe.resources
+F:\Github Project\health_insurance\OOAD Final Project\obj\Debug\OOAD_Final_Project.recipe_details_view.resources
+F:\Github Project\health_insurance\OOAD Final Project\obj\Debug\OOAD_Final_Project.user_details_view.resources

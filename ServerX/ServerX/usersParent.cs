@@ -18,7 +18,7 @@ namespace ServerX
         private string username;
         private string password;
         private string userRole;
-        private Image userProfilePic;
+        private string userProfilePic;
 
         [DataMemberAttribute]
         public string Name
@@ -103,9 +103,8 @@ namespace ServerX
                 userRole = value;
             }
         }
-
         [DataMemberAttribute]
-        public Image UserProfilePic
+        public string UserProfilePic
         {
             get
             {

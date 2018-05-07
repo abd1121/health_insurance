@@ -98,6 +98,8 @@
     <Compile Include="category.cs" />
     <Compile Include="categoryDL.cs" />
     <Compile Include="dietPlan.cs" />
+    <Compile Include="offer.cs" />
+    <Compile Include="offersDL.cs" />
     <Compile Include="recipe.cs" />
     <Compile Include="recipeDL.cs" />
     <Compile Include="Service1.svc.cs">

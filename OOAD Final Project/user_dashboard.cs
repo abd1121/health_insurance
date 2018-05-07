@@ -15,6 +15,8 @@ namespace OOAD_Final_Project
         public delegate void whatEatClickEventhandler(object source, EventArgs e);
         public event whatEatClickEventhandler whatEatClick;
 
+        public delegate void AdvanceClickEventhandler(object source, EventArgs e);
+        public event whatEatClickEventhandler AdvanceClick;
         private static user_dashboard _instance;
         public user_dashboard()
         {
@@ -35,8 +37,7 @@ namespace OOAD_Final_Project
 
         private void advanceSearch_click(object sender, EventArgs e)
         {
-            user_advance_search frm = new user_advance_search();
-            frm.Show();
+            OnAdvanceClick();
         }
 
         private void searchBtn_Click(object sender, EventArgs e)
@@ -47,6 +48,14 @@ namespace OOAD_Final_Project
         public void OnwhatEatClick() {
             if (whatEatClick !=null) {
                 whatEatClick(this, EventArgs.Empty);
+            }
+        }
+
+        public void OnAdvanceClick()
+        {
+            if (whatEatClick != null)
+            {
+                AdvanceClick(this, EventArgs.Empty);
             }
         }
     }

@@ -48,5 +48,10 @@ namespace OOAD_Final_Project
                 comboBox1.Items.Add(c.Category_name);
             }
         }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

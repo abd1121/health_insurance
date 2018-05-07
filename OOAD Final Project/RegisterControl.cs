@@ -72,7 +72,7 @@ namespace OOAD_Final_Project
                 user = myserver.getUserBYEmail(email);
                 if (user == null)
                 {
-                    myserver.addUser(name, email, password, phone);
+                    myserver.addAdmin(name, email, password, phone);
 
                     Main homeControl = new Main();
                     // ADD HO GYA KA SUCCESS MESSAGE SHOW KARE

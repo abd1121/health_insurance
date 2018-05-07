@@ -21,6 +21,13 @@ namespace OOAD_Final_Project
             InitializeComponent();
         }
 
+        public Image byteArrayToImage(byte[] byteArrayIn)
+        {
+            MemoryStream ms = new MemoryStream(byteArrayIn);
+            Image returnImage = Image.FromStream(ms);
+            return returnImage;
+        }
+
         public UserView(server.User u, int index)
         {
             InitializeComponent();
@@ -28,6 +35,10 @@ namespace OOAD_Final_Project
             ToolTip image_lable = new ToolTip();
             image_lable.SetToolTip(userImage, u.Name);
             this_index = index;
+            if(user.UserProfilePic != null)
+            {
+                userImage.Image = Image.FromFile(user.UserProfilePic);
+            }
         }
 
         private void userDetailsBtn_Click(object sender, EventArgs e)
@@ -39,6 +50,12 @@ namespace OOAD_Final_Project
         {
             addnewUser edit_user = new addnewUser(user, this_index);
             edit_user.Show();
+        }
+
+        private void userImage_Click(object sender, EventArgs e)
+        {
+            user_details_view udv = new user_details_view(user);
+            udv.Show();
         }
     }
 }

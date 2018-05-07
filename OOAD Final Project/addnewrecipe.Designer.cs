@@ -47,6 +47,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.bunifuDragControl2 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
             this.categoriesList = new System.Windows.Forms.ListBox();
+            this.panel2 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.pictureView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -265,6 +266,7 @@
             this.chooseImageBtn.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.chooseImageBtn.Textcolor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
             this.chooseImageBtn.TextFont = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chooseImageBtn.Click += new System.EventHandler(this.chooseImageBtn_Click);
             // 
             // pictureView
             // 
@@ -291,11 +293,12 @@
             // 
             // desctxtbox
             // 
-            this.desctxtbox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.desctxtbox.BackColor = System.Drawing.Color.Gainsboro;
             this.desctxtbox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.desctxtbox.Location = new System.Drawing.Point(297, 89);
+            this.desctxtbox.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.desctxtbox.Location = new System.Drawing.Point(300, 91);
             this.desctxtbox.Name = "desctxtbox";
-            this.desctxtbox.Size = new System.Drawing.Size(247, 134);
+            this.desctxtbox.Size = new System.Drawing.Size(212, 94);
             this.desctxtbox.TabIndex = 25;
             this.desctxtbox.Text = "";
             // 
@@ -328,6 +331,14 @@
             this.categoriesList.Size = new System.Drawing.Size(533, 57);
             this.categoriesList.TabIndex = 27;
             // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.Gainsboro;
+            this.panel2.Location = new System.Drawing.Point(297, 88);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(218, 100);
+            this.panel2.TabIndex = 28;
+            // 
             // addnewrecipe
             // 
             this.AccessibleRole = System.Windows.Forms.AccessibleRole.ButtonDropDown;
@@ -335,9 +346,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(568, 442);
+            this.Controls.Add(this.desctxtbox);
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.categoriesList);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.desctxtbox);
             this.Controls.Add(this.datetxtbox);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.cancelBtn);
@@ -380,5 +392,6 @@
         private System.Windows.Forms.Label label3;
         private Bunifu.Framework.UI.BunifuDragControl bunifuDragControl2;
         private System.Windows.Forms.ListBox categoriesList;
+        private System.Windows.Forms.Panel panel2;
     }
 }

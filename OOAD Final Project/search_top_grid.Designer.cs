@@ -31,7 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(search_top_grid));
             this.recipe_description = new System.Windows.Forms.RichTextBox();
             this.loadOffersButton = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.load = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.loadRecipe = new Bunifu.Framework.UI.BunifuFlatButton();
             this.recipe_thumbnail = new System.Windows.Forms.PictureBox();
             this.recipeTitle = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.recipe_thumbnail)).BeginInit();
@@ -84,41 +84,42 @@
             this.loadOffersButton.Textcolor = System.Drawing.Color.White;
             this.loadOffersButton.TextFont = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             // 
-            // load
+            // loadRecipe
             // 
-            this.load.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(64)))), ((int)(((byte)(83)))));
-            this.load.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
-            this.load.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.load.BorderRadius = 0;
-            this.load.ButtonText = "Load Recipe";
-            this.load.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.load.DisabledColor = System.Drawing.Color.Gray;
-            this.load.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(182)))), ((int)(((byte)(184)))));
-            this.load.Iconcolor = System.Drawing.Color.Transparent;
-            this.load.Iconimage = ((System.Drawing.Image)(resources.GetObject("load.Iconimage")));
-            this.load.Iconimage_right = null;
-            this.load.Iconimage_right_Selected = null;
-            this.load.Iconimage_Selected = null;
-            this.load.IconMarginLeft = 0;
-            this.load.IconMarginRight = 0;
-            this.load.IconRightVisible = true;
-            this.load.IconRightZoom = 0D;
-            this.load.IconVisible = true;
-            this.load.IconZoom = 40D;
-            this.load.IsTab = true;
-            this.load.Location = new System.Drawing.Point(341, 89);
-            this.load.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.load.Name = "load";
-            this.load.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
-            this.load.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(64)))), ((int)(((byte)(83)))));
-            this.load.OnHoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(237)))), ((int)(((byte)(237)))));
-            this.load.selected = false;
-            this.load.Size = new System.Drawing.Size(133, 30);
-            this.load.TabIndex = 5;
-            this.load.Text = "Load Recipe";
-            this.load.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.load.Textcolor = System.Drawing.Color.White;
-            this.load.TextFont = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.loadRecipe.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(64)))), ((int)(((byte)(83)))));
+            this.loadRecipe.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
+            this.loadRecipe.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.loadRecipe.BorderRadius = 0;
+            this.loadRecipe.ButtonText = "Load Recipe";
+            this.loadRecipe.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.loadRecipe.DisabledColor = System.Drawing.Color.Gray;
+            this.loadRecipe.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(182)))), ((int)(((byte)(184)))));
+            this.loadRecipe.Iconcolor = System.Drawing.Color.Transparent;
+            this.loadRecipe.Iconimage = ((System.Drawing.Image)(resources.GetObject("loadRecipe.Iconimage")));
+            this.loadRecipe.Iconimage_right = null;
+            this.loadRecipe.Iconimage_right_Selected = null;
+            this.loadRecipe.Iconimage_Selected = null;
+            this.loadRecipe.IconMarginLeft = 0;
+            this.loadRecipe.IconMarginRight = 0;
+            this.loadRecipe.IconRightVisible = true;
+            this.loadRecipe.IconRightZoom = 0D;
+            this.loadRecipe.IconVisible = true;
+            this.loadRecipe.IconZoom = 40D;
+            this.loadRecipe.IsTab = true;
+            this.loadRecipe.Location = new System.Drawing.Point(341, 89);
+            this.loadRecipe.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.loadRecipe.Name = "loadRecipe";
+            this.loadRecipe.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
+            this.loadRecipe.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(64)))), ((int)(((byte)(83)))));
+            this.loadRecipe.OnHoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(237)))), ((int)(((byte)(237)))));
+            this.loadRecipe.selected = false;
+            this.loadRecipe.Size = new System.Drawing.Size(133, 30);
+            this.loadRecipe.TabIndex = 5;
+            this.loadRecipe.Text = "Load Recipe";
+            this.loadRecipe.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.loadRecipe.Textcolor = System.Drawing.Color.White;
+            this.loadRecipe.TextFont = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.loadRecipe.Click += new System.EventHandler(this.loadRecipe_Click);
             // 
             // recipe_thumbnail
             // 
@@ -147,7 +148,7 @@
             this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.recipeTitle);
             this.Controls.Add(this.loadOffersButton);
-            this.Controls.Add(this.load);
+            this.Controls.Add(this.loadRecipe);
             this.Controls.Add(this.recipe_description);
             this.Controls.Add(this.recipe_thumbnail);
             this.Name = "search_top_grid";
@@ -163,7 +164,7 @@
         private System.Windows.Forms.PictureBox recipe_thumbnail;
         private System.Windows.Forms.RichTextBox recipe_description;
         private Bunifu.Framework.UI.BunifuFlatButton loadOffersButton;
-        private Bunifu.Framework.UI.BunifuFlatButton load;
+        private Bunifu.Framework.UI.BunifuFlatButton loadRecipe;
         private System.Windows.Forms.Label recipeTitle;
     }
 }

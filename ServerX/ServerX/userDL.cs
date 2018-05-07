@@ -19,7 +19,7 @@ namespace ServerX
         }
 
         // ADD USER 
-        public static void addUser(string name, string email, string password, string phone)
+        public static void addUser(string name, string email, string password, string phone, string profile)
         {
             if (getUserBYEmail(email) == null)
             {
@@ -29,6 +29,31 @@ namespace ServerX
                 u.Password = password;
                 u.Phone = phone;
                 u.UserRole = "User";
+                u.UserProfilePic = profile;
+
+                if (email == "admin")
+                {
+                    u.UserRole = "Admin";
+                }
+                else
+                {
+                    u.UserRole = "User";
+                }
+                userDL.users.Add(u);
+            }
+        }
+
+        public static void addAdmin(string name, string email, string password, string phone)
+        {
+            if (getUserBYEmail(email) == null)
+            {
+                User u = new User();
+                u.Name = name;
+                u.Email = email;
+                u.Password = password;
+                u.Phone = phone;
+                u.UserRole = "User";
+
                 if (email == "admin")
                 {
                     u.UserRole = "Admin";
@@ -85,7 +110,7 @@ namespace ServerX
             users.RemoveAt(index);
         }
 
-        public static void generateDietPlan(User user)
+        public static User generateDietPlan(User user)
         {
             Random r = new Random();
             List<recipe> random_recpies = new List<recipe>();
@@ -104,6 +129,15 @@ namespace ServerX
             user.DietPlan.Friday = random_recpies[4];
             user.DietPlan.Saturday = random_recpies[5];
             user.DietPlan.Sunday = random_recpies[6];
+
+            foreach(User u in users)
+            {
+                if(u.Email == user.Email && u.Password == user.Password)
+                {
+                    u.DietPlan = user.DietPlan;
+                }
+            }
+            return user;
         }
 
         public static void save_user_settings(User u, string name, string email, string password, string phone, string username) {

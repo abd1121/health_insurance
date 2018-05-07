@@ -38,6 +38,7 @@
             // 
             // userImage
             // 
+            this.userImage.Cursor = System.Windows.Forms.Cursors.Hand;
             this.userImage.Image = global::OOAD_Final_Project.Properties.Resources._30595282_1944152219247918_2402168826331398144_n;
             this.userImage.Location = new System.Drawing.Point(9, 7);
             this.userImage.Name = "userImage";
@@ -45,6 +46,7 @@
             this.userImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.userImage.TabIndex = 0;
             this.userImage.TabStop = false;
+            this.userImage.Click += new System.EventHandler(this.userImage_Click);
             // 
             // userDetailsBtn
             // 

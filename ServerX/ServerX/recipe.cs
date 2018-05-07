@@ -4,9 +4,12 @@ using System.Linq;
 using System.Web;
 using System.Drawing;
 using System.IO;
+using System.Runtime.Serialization;
 
 namespace ServerX
 {
+    [Serializable]
+    [DataContractAttribute(IsReference = true)]
     public class recipe
     {
         private string title;
@@ -15,7 +18,9 @@ namespace ServerX
         private string date;
         private string desc;
         private List<string> categories = new List<string>();
-        Stream recipe_thumb;
+        string recipe_thumb;
+
+        [DataMemberAttribute]
         public string Title
         {
             get
@@ -29,6 +34,7 @@ namespace ServerX
             }
         }
 
+        [DataMemberAttribute]
         public string Author
         {
             get
@@ -42,6 +48,7 @@ namespace ServerX
             }
         }
 
+        [DataMemberAttribute]
         public string Video_url
         {
             get
@@ -55,6 +62,7 @@ namespace ServerX
             }
         }
 
+        [DataMemberAttribute]
         public string Date
         {
             get
@@ -68,6 +76,7 @@ namespace ServerX
             }
         }
 
+        [DataMemberAttribute]
         public string Desc
         {
             get
@@ -81,6 +90,7 @@ namespace ServerX
             }
         }
 
+        [DataMemberAttribute]
         public List<string> Categories
         {
             get
@@ -94,7 +104,8 @@ namespace ServerX
             }
         }
 
-        public Stream Recipe_thumb
+        [DataMemberAttribute]
+        public string Recipe_thumb
         {
             get
             {

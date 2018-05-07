@@ -12,7 +12,6 @@ namespace OOAD_Final_Project
 {
     public partial class Admin_Users : UserControl
     {
-        server.Service1 myService = new server.Service1();
         private static Admin_Users _instance;
         public Admin_Users()
         {
@@ -22,6 +21,7 @@ namespace OOAD_Final_Project
 
         public void loadUsers()
         {
+            server.Service1 myService = new server.Service1();
             int index = 0;
             foreach (server.User user in myService.getAllUsers())
             {

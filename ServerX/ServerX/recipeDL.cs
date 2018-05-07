@@ -9,7 +9,7 @@ namespace ServerX
     {
         public static List<recipe> recipes = new List<recipe>();
 
-        public static void addRecipe(string title, string author, string date, string url, string desc, List<string> categories)
+        public static void addRecipe(string title, string author, string date, string url, string desc, List<string> categories, string thumb)
         {
             recipe new_recipe = new recipe();
             new_recipe.Title = title;
@@ -18,7 +18,7 @@ namespace ServerX
             new_recipe.Video_url = url;
             new_recipe.Desc = desc;
             new_recipe.Categories = categories;
-
+            new_recipe.Recipe_thumb = thumb;
             recipes.Add(new_recipe);
         }
 
@@ -57,6 +57,20 @@ namespace ServerX
             Random r = new Random();
             int rnd = r.Next(0, recipeDL.recipes.Count() - 1);
             return recipeDL.recipes[rnd];
+        }
+
+        public static recipe getRandomRecipeByCategory(string category)
+        {
+            recipe selectedrecipe = null;
+            foreach(recipe r in recipes)
+            {
+                if (r.Categories.Contains(category))
+                {
+                    selectedrecipe = r;
+                    break;
+                }
+            }
+            return selectedrecipe;
         }
     }
 }

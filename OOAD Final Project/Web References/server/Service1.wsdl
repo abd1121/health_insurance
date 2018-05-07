@@ -5,10 +5,7 @@
       <xsd:import schemaLocation="http://localhost:2125/Service1.svc?xsd=xsd0" namespace="http://tempuri.org/" />
       <xsd:import schemaLocation="http://localhost:2125/Service1.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
       <xsd:import schemaLocation="http://localhost:2125/Service1.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/ServerX" />
-      <xsd:import schemaLocation="http://localhost:2125/Service1.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/System.Drawing" />
-      <xsd:import schemaLocation="http://localhost:2125/Service1.svc?xsd=xsd4" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
-      <xsd:import schemaLocation="http://localhost:2125/Service1.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/System.IO" />
-      <xsd:import schemaLocation="http://localhost:2125/Service1.svc?xsd=xsd6" namespace="http://schemas.datacontract.org/2004/07/System" />
+      <xsd:import schemaLocation="http://localhost:2125/Service1.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
     </xsd:schema>
   </wsdl:types>
   <wsdl:message name="IService1_GetData_InputMessage">
@@ -28,6 +25,12 @@
   </wsdl:message>
   <wsdl:message name="IService1_addUser_OutputMessage">
     <wsdl:part name="parameters" element="tns:addUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_addAdmin_InputMessage">
+    <wsdl:part name="parameters" element="tns:addAdmin" />
+  </wsdl:message>
+  <wsdl:message name="IService1_addAdmin_OutputMessage">
+    <wsdl:part name="parameters" element="tns:addAdminResponse" />
   </wsdl:message>
   <wsdl:message name="IService1_getUserBYEmail_InputMessage">
     <wsdl:part name="parameters" element="tns:getUserBYEmail" />
@@ -83,6 +86,12 @@
   <wsdl:message name="IService1_addCategory_OutputMessage">
     <wsdl:part name="parameters" element="tns:addCategoryResponse" />
   </wsdl:message>
+  <wsdl:message name="IService1_generateDietPlan_InputMessage">
+    <wsdl:part name="parameters" element="tns:generateDietPlan" />
+  </wsdl:message>
+  <wsdl:message name="IService1_generateDietPlan_OutputMessage">
+    <wsdl:part name="parameters" element="tns:generateDietPlanResponse" />
+  </wsdl:message>
   <wsdl:message name="IService1_getAllCategories_InputMessage">
     <wsdl:part name="parameters" element="tns:getAllCategories" />
   </wsdl:message>
@@ -94,12 +103,6 @@
   </wsdl:message>
   <wsdl:message name="IService1_deleteRecipe_OutputMessage">
     <wsdl:part name="parameters" element="tns:deleteRecipeResponse" />
-  </wsdl:message>
-  <wsdl:message name="IService1_generateDietPlan_InputMessage">
-    <wsdl:part name="parameters" element="tns:generateDietPlan" />
-  </wsdl:message>
-  <wsdl:message name="IService1_generateDietPlan_OutputMessage">
-    <wsdl:part name="parameters" element="tns:generateDietPlanResponse" />
   </wsdl:message>
   <wsdl:message name="IService1_deleteUser_InputMessage">
     <wsdl:part name="parameters" element="tns:deleteUser" />
@@ -131,6 +134,12 @@
   <wsdl:message name="IService1_getRandomRecipe_OutputMessage">
     <wsdl:part name="parameters" element="tns:getRandomRecipeResponse" />
   </wsdl:message>
+  <wsdl:message name="IService1_getRandomRecipeByCateegory_InputMessage">
+    <wsdl:part name="parameters" element="tns:getRandomRecipeByCateegory" />
+  </wsdl:message>
+  <wsdl:message name="IService1_getRandomRecipeByCateegory_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getRandomRecipeByCateegoryResponse" />
+  </wsdl:message>
   <wsdl:message name="IService1_updateRecipe_InputMessage">
     <wsdl:part name="parameters" element="tns:updateRecipe" />
   </wsdl:message>
@@ -155,6 +164,10 @@
     <wsdl:operation name="addUser">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/addUser" message="tns:IService1_addUser_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/addUserResponse" message="tns:IService1_addUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="addAdmin">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/addAdmin" message="tns:IService1_addAdmin_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/addAdminResponse" message="tns:IService1_addAdmin_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="getUserBYEmail">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/getUserBYEmail" message="tns:IService1_getUserBYEmail_InputMessage" />
@@ -192,6 +205,10 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/addCategory" message="tns:IService1_addCategory_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/addCategoryResponse" message="tns:IService1_addCategory_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="generateDietPlan">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/generateDietPlan" message="tns:IService1_generateDietPlan_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/generateDietPlanResponse" message="tns:IService1_generateDietPlan_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="getAllCategories">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/getAllCategories" message="tns:IService1_getAllCategories_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/getAllCategoriesResponse" message="tns:IService1_getAllCategories_OutputMessage" />
@@ -199,10 +216,6 @@
     <wsdl:operation name="deleteRecipe">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/deleteRecipe" message="tns:IService1_deleteRecipe_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/deleteRecipeResponse" message="tns:IService1_deleteRecipe_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="generateDietPlan">
-      <wsdl:input wsaw:Action="http://tempuri.org/IService1/generateDietPlan" message="tns:IService1_generateDietPlan_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IService1/generateDietPlanResponse" message="tns:IService1_generateDietPlan_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="deleteUser">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/deleteUser" message="tns:IService1_deleteUser_InputMessage" />
@@ -223,6 +236,10 @@
     <wsdl:operation name="getRandomRecipe">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/getRandomRecipe" message="tns:IService1_getRandomRecipe_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/getRandomRecipeResponse" message="tns:IService1_getRandomRecipe_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getRandomRecipeByCateegory">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/getRandomRecipeByCateegory" message="tns:IService1_getRandomRecipeByCateegory_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/getRandomRecipeByCateegoryResponse" message="tns:IService1_getRandomRecipeByCateegory_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="updateRecipe">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/updateRecipe" message="tns:IService1_updateRecipe_InputMessage" />
@@ -255,6 +272,15 @@
     </wsdl:operation>
     <wsdl:operation name="addUser">
       <soap:operation soapAction="http://tempuri.org/IService1/addUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addAdmin">
+      <soap:operation soapAction="http://tempuri.org/IService1/addAdmin" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -343,6 +369,15 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="generateDietPlan">
+      <soap:operation soapAction="http://tempuri.org/IService1/generateDietPlan" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="getAllCategories">
       <soap:operation soapAction="http://tempuri.org/IService1/getAllCategories" style="document" />
       <wsdl:input>
@@ -354,15 +389,6 @@
     </wsdl:operation>
     <wsdl:operation name="deleteRecipe">
       <soap:operation soapAction="http://tempuri.org/IService1/deleteRecipe" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="generateDietPlan">
-      <soap:operation soapAction="http://tempuri.org/IService1/generateDietPlan" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -408,6 +434,15 @@
     </wsdl:operation>
     <wsdl:operation name="getRandomRecipe">
       <soap:operation soapAction="http://tempuri.org/IService1/getRandomRecipe" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getRandomRecipeByCateegory">
+      <soap:operation soapAction="http://tempuri.org/IService1/getRandomRecipeByCateegory" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

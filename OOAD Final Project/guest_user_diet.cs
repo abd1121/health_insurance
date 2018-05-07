@@ -25,11 +25,29 @@ namespace OOAD_Final_Project
             InitializeComponent();
             search_top_grid s = new search_top_grid();
             top_container.Controls.Add(s);
-            for(int i = 0; i < 4; ++i)
-            {
-                search_bottom_grid sb = new search_bottom_grid();
-                relatedSuggetionsContainer.Controls.Add(sb);
-            }
+            search_bottom_grid sb1 = new search_bottom_grid();
+            relatedSuggetionsContainer.Controls.Add(sb1);
+            sb1.recipeClick += OnrecipeClick;
+
+            search_bottom_grid sb2 = new search_bottom_grid();
+            relatedSuggetionsContainer.Controls.Add(sb2);
+            sb2.recipeClick += OnrecipeClick;
+
+            search_bottom_grid sb3 = new search_bottom_grid();
+            relatedSuggetionsContainer.Controls.Add(sb3);
+            sb3.recipeClick += OnrecipeClick;
+
+            search_bottom_grid sb4 = new search_bottom_grid();
+            relatedSuggetionsContainer.Controls.Add(sb4);
+            sb4.recipeClick += OnrecipeClick;
+        }
+
+        public void OnrecipeClick(object source, RecipeEventArgs e)
+        {
+            
+            search_top_grid s = new search_top_grid(e.Recipe);
+            top_container.Controls.Add(s);
+            s.BringToFront();
         }
 
         private void loadOffersButton_Click(object sender, EventArgs e)

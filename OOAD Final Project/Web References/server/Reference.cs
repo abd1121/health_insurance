@@ -23,11 +23,10 @@ namespace OOAD_Final_Project.server {
     
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2558.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Web.Services.WebServiceBindingAttribute(Name="BasicHttpBinding_IService1", Namespace="http://tempuri.org/")]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(MarshalByRefObject))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(usersParent))]
     public partial class Service1 : System.Web.Services.Protocols.SoapHttpClientProtocol {
         
@@ -36,6 +35,8 @@ namespace OOAD_Final_Project.server {
         private System.Threading.SendOrPostCallback GetDataUsingDataContractOperationCompleted;
         
         private System.Threading.SendOrPostCallback addUserOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback addAdminOperationCompleted;
         
         private System.Threading.SendOrPostCallback getUserBYEmailOperationCompleted;
         
@@ -55,11 +56,11 @@ namespace OOAD_Final_Project.server {
         
         private System.Threading.SendOrPostCallback addCategoryOperationCompleted;
         
+        private System.Threading.SendOrPostCallback generateDietPlanOperationCompleted;
+        
         private System.Threading.SendOrPostCallback getAllCategoriesOperationCompleted;
         
         private System.Threading.SendOrPostCallback deleteRecipeOperationCompleted;
-        
-        private System.Threading.SendOrPostCallback generateDietPlanOperationCompleted;
         
         private System.Threading.SendOrPostCallback deleteUserOperationCompleted;
         
@@ -70,6 +71,8 @@ namespace OOAD_Final_Project.server {
         private System.Threading.SendOrPostCallback updateUserOperationCompleted;
         
         private System.Threading.SendOrPostCallback getRandomRecipeOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback getRandomRecipeByCateegoryOperationCompleted;
         
         private System.Threading.SendOrPostCallback updateRecipeOperationCompleted;
         
@@ -123,6 +126,9 @@ namespace OOAD_Final_Project.server {
         public event addUserCompletedEventHandler addUserCompleted;
         
         /// <remarks/>
+        public event addAdminCompletedEventHandler addAdminCompleted;
+        
+        /// <remarks/>
         public event getUserBYEmailCompletedEventHandler getUserBYEmailCompleted;
         
         /// <remarks/>
@@ -150,13 +156,13 @@ namespace OOAD_Final_Project.server {
         public event addCategoryCompletedEventHandler addCategoryCompleted;
         
         /// <remarks/>
+        public event generateDietPlanCompletedEventHandler generateDietPlanCompleted;
+        
+        /// <remarks/>
         public event getAllCategoriesCompletedEventHandler getAllCategoriesCompleted;
         
         /// <remarks/>
         public event deleteRecipeCompletedEventHandler deleteRecipeCompleted;
-        
-        /// <remarks/>
-        public event generateDietPlanCompletedEventHandler generateDietPlanCompleted;
         
         /// <remarks/>
         public event deleteUserCompletedEventHandler deleteUserCompleted;
@@ -172,6 +178,9 @@ namespace OOAD_Final_Project.server {
         
         /// <remarks/>
         public event getRandomRecipeCompletedEventHandler getRandomRecipeCompleted;
+        
+        /// <remarks/>
+        public event getRandomRecipeByCateegoryCompletedEventHandler getRandomRecipeByCateegoryCompleted;
         
         /// <remarks/>
         public event updateRecipeCompletedEventHandler updateRecipeCompleted;
@@ -243,21 +252,22 @@ namespace OOAD_Final_Project.server {
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/addUser", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public void addUser([System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string name, [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string email, [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string password, [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string phone) {
+        public void addUser([System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string name, [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string email, [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string password, [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string phone, [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string profile) {
             this.Invoke("addUser", new object[] {
                         name,
                         email,
                         password,
-                        phone});
+                        phone,
+                        profile});
         }
         
         /// <remarks/>
-        public void addUserAsync(string name, string email, string password, string phone) {
-            this.addUserAsync(name, email, password, phone, null);
+        public void addUserAsync(string name, string email, string password, string phone, string profile) {
+            this.addUserAsync(name, email, password, phone, profile, null);
         }
         
         /// <remarks/>
-        public void addUserAsync(string name, string email, string password, string phone, object userState) {
+        public void addUserAsync(string name, string email, string password, string phone, string profile, object userState) {
             if ((this.addUserOperationCompleted == null)) {
                 this.addUserOperationCompleted = new System.Threading.SendOrPostCallback(this.OnaddUserOperationCompleted);
             }
@@ -265,13 +275,48 @@ namespace OOAD_Final_Project.server {
                         name,
                         email,
                         password,
-                        phone}, this.addUserOperationCompleted, userState);
+                        phone,
+                        profile}, this.addUserOperationCompleted, userState);
         }
         
         private void OnaddUserOperationCompleted(object arg) {
             if ((this.addUserCompleted != null)) {
                 System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
                 this.addUserCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/addAdmin", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public void addAdmin([System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string name, [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string email, [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string password, [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string phone) {
+            this.Invoke("addAdmin", new object[] {
+                        name,
+                        email,
+                        password,
+                        phone});
+        }
+        
+        /// <remarks/>
+        public void addAdminAsync(string name, string email, string password, string phone) {
+            this.addAdminAsync(name, email, password, phone, null);
+        }
+        
+        /// <remarks/>
+        public void addAdminAsync(string name, string email, string password, string phone, object userState) {
+            if ((this.addAdminOperationCompleted == null)) {
+                this.addAdminOperationCompleted = new System.Threading.SendOrPostCallback(this.OnaddAdminOperationCompleted);
+            }
+            this.InvokeAsync("addAdmin", new object[] {
+                        name,
+                        email,
+                        password,
+                        phone}, this.addAdminOperationCompleted, userState);
+        }
+        
+        private void OnaddAdminOperationCompleted(object arg) {
+            if ((this.addAdminCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.addAdminCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
             }
         }
         
@@ -424,23 +469,24 @@ namespace OOAD_Final_Project.server {
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/addRecipe", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public void addRecipe([System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string title, [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string author, [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string date, [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string url, [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string desc, [System.Xml.Serialization.XmlArrayAttribute(IsNullable=true)] [System.Xml.Serialization.XmlArrayItemAttribute(Namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays")] string[] categories) {
+        public void addRecipe([System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string title, [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string author, [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string date, [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string url, [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string desc, [System.Xml.Serialization.XmlArrayAttribute(IsNullable=true)] [System.Xml.Serialization.XmlArrayItemAttribute(Namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays")] string[] categories, [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string thumb) {
             this.Invoke("addRecipe", new object[] {
                         title,
                         author,
                         date,
                         url,
                         desc,
-                        categories});
+                        categories,
+                        thumb});
         }
         
         /// <remarks/>
-        public void addRecipeAsync(string title, string author, string date, string url, string desc, string[] categories) {
-            this.addRecipeAsync(title, author, date, url, desc, categories, null);
+        public void addRecipeAsync(string title, string author, string date, string url, string desc, string[] categories, string thumb) {
+            this.addRecipeAsync(title, author, date, url, desc, categories, thumb, null);
         }
         
         /// <remarks/>
-        public void addRecipeAsync(string title, string author, string date, string url, string desc, string[] categories, object userState) {
+        public void addRecipeAsync(string title, string author, string date, string url, string desc, string[] categories, string thumb, object userState) {
             if ((this.addRecipeOperationCompleted == null)) {
                 this.addRecipeOperationCompleted = new System.Threading.SendOrPostCallback(this.OnaddRecipeOperationCompleted);
             }
@@ -450,7 +496,8 @@ namespace OOAD_Final_Project.server {
                         date,
                         url,
                         desc,
-                        categories}, this.addRecipeOperationCompleted, userState);
+                        categories,
+                        thumb}, this.addRecipeOperationCompleted, userState);
         }
         
         private void OnaddRecipeOperationCompleted(object arg) {
@@ -546,6 +593,36 @@ namespace OOAD_Final_Project.server {
         }
         
         /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/generateDietPlan", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        [return: System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public User generateDietPlan([System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] User user) {
+            object[] results = this.Invoke("generateDietPlan", new object[] {
+                        user});
+            return ((User)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void generateDietPlanAsync(User user) {
+            this.generateDietPlanAsync(user, null);
+        }
+        
+        /// <remarks/>
+        public void generateDietPlanAsync(User user, object userState) {
+            if ((this.generateDietPlanOperationCompleted == null)) {
+                this.generateDietPlanOperationCompleted = new System.Threading.SendOrPostCallback(this.OngenerateDietPlanOperationCompleted);
+            }
+            this.InvokeAsync("generateDietPlan", new object[] {
+                        user}, this.generateDietPlanOperationCompleted, userState);
+        }
+        
+        private void OngenerateDietPlanOperationCompleted(object arg) {
+            if ((this.generateDietPlanCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.generateDietPlanCompleted(this, new generateDietPlanCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/getAllCategories", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
         [return: System.Xml.Serialization.XmlArrayAttribute(IsNullable=true)]
         [return: System.Xml.Serialization.XmlArrayItemAttribute(Namespace="http://schemas.datacontract.org/2004/07/ServerX")]
@@ -599,34 +676,6 @@ namespace OOAD_Final_Project.server {
             if ((this.deleteRecipeCompleted != null)) {
                 System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
                 this.deleteRecipeCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/generateDietPlan", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public void generateDietPlan([System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] User user) {
-            this.Invoke("generateDietPlan", new object[] {
-                        user});
-        }
-        
-        /// <remarks/>
-        public void generateDietPlanAsync(User user) {
-            this.generateDietPlanAsync(user, null);
-        }
-        
-        /// <remarks/>
-        public void generateDietPlanAsync(User user, object userState) {
-            if ((this.generateDietPlanOperationCompleted == null)) {
-                this.generateDietPlanOperationCompleted = new System.Threading.SendOrPostCallback(this.OngenerateDietPlanOperationCompleted);
-            }
-            this.InvokeAsync("generateDietPlan", new object[] {
-                        user}, this.generateDietPlanOperationCompleted, userState);
-        }
-        
-        private void OngenerateDietPlanOperationCompleted(object arg) {
-            if ((this.generateDietPlanCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.generateDietPlanCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
             }
         }
         
@@ -777,6 +826,36 @@ namespace OOAD_Final_Project.server {
             if ((this.getRandomRecipeCompleted != null)) {
                 System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
                 this.getRandomRecipeCompleted(this, new getRandomRecipeCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/getRandomRecipeByCateegory", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        [return: System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public recipe getRandomRecipeByCateegory([System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string category) {
+            object[] results = this.Invoke("getRandomRecipeByCateegory", new object[] {
+                        category});
+            return ((recipe)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void getRandomRecipeByCateegoryAsync(string category) {
+            this.getRandomRecipeByCateegoryAsync(category, null);
+        }
+        
+        /// <remarks/>
+        public void getRandomRecipeByCateegoryAsync(string category, object userState) {
+            if ((this.getRandomRecipeByCateegoryOperationCompleted == null)) {
+                this.getRandomRecipeByCateegoryOperationCompleted = new System.Threading.SendOrPostCallback(this.OngetRandomRecipeByCateegoryOperationCompleted);
+            }
+            this.InvokeAsync("getRandomRecipeByCateegory", new object[] {
+                        category}, this.getRandomRecipeByCateegoryOperationCompleted, userState);
+        }
+        
+        private void OngetRandomRecipeByCateegoryOperationCompleted(object arg) {
+            if ((this.getRandomRecipeByCateegoryCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.getRandomRecipeByCateegoryCompleted(this, new getRandomRecipeByCateegoryCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
             }
         }
         
@@ -947,38 +1026,6 @@ namespace OOAD_Final_Project.server {
     }
     
     /// <remarks/>
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(Stream))]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2612.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schemas.datacontract.org/2004/07/System")]
-    public partial class MarshalByRefObject {
-        
-        private object @__identityField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public object @__identity {
-            get {
-                return this.@__identityField;
-            }
-            set {
-                this.@__identityField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2612.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schemas.datacontract.org/2004/07/System.IO")]
-    public partial class Stream : MarshalByRefObject {
-    }
-    
-    /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2612.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -994,11 +1041,15 @@ namespace OOAD_Final_Project.server {
         
         private string descField;
         
-        private Stream recipe_thumbField;
+        private string recipe_thumbField;
         
         private string titleField;
         
         private string video_urlField;
+        
+        private string idField;
+        
+        private string refField;
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
@@ -1047,7 +1098,7 @@ namespace OOAD_Final_Project.server {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public Stream Recipe_thumb {
+        public string Recipe_thumb {
             get {
                 return this.recipe_thumbField;
             }
@@ -1075,6 +1126,28 @@ namespace OOAD_Final_Project.server {
             }
             set {
                 this.video_urlField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute(Form=System.Xml.Schema.XmlSchemaForm.Qualified, Namespace="http://schemas.microsoft.com/2003/10/Serialization/", DataType="ID")]
+        public string Id {
+            get {
+                return this.idField;
+            }
+            set {
+                this.idField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute(Form=System.Xml.Schema.XmlSchemaForm.Qualified, Namespace="http://schemas.microsoft.com/2003/10/Serialization/", DataType="IDREF")]
+        public string Ref {
+            get {
+                return this.refField;
+            }
+            set {
+                this.refField = value;
             }
         }
     }
@@ -1180,41 +1253,6 @@ namespace OOAD_Final_Project.server {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2612.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schemas.datacontract.org/2004/07/System.Drawing")]
-    public partial class Image {
-        
-        private System.Xml.XmlElement[] anyField;
-        
-        private System.Xml.XmlQualifiedName factoryTypeField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAnyElementAttribute()]
-        public System.Xml.XmlElement[] Any {
-            get {
-                return this.anyField;
-            }
-            set {
-                this.anyField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute(Form=System.Xml.Schema.XmlSchemaForm.Qualified, Namespace="http://schemas.microsoft.com/2003/10/Serialization/")]
-        public System.Xml.XmlQualifiedName FactoryType {
-            get {
-                return this.factoryTypeField;
-            }
-            set {
-                this.factoryTypeField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(User))]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2612.0")]
     [System.SerializableAttribute()]
@@ -1231,7 +1269,7 @@ namespace OOAD_Final_Project.server {
         
         private string phoneField;
         
-        private Image userProfilePicField;
+        private string userProfilePicField;
         
         private string userRoleField;
         
@@ -1287,7 +1325,7 @@ namespace OOAD_Final_Project.server {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public Image UserProfilePic {
+        public string UserProfilePic {
             get {
                 return this.userProfilePicField;
             }
@@ -1364,11 +1402,11 @@ namespace OOAD_Final_Project.server {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2558.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
     public delegate void GetDataCompletedEventHandler(object sender, GetDataCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2558.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class GetDataCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -1390,11 +1428,11 @@ namespace OOAD_Final_Project.server {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2558.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
     public delegate void GetDataUsingDataContractCompletedEventHandler(object sender, GetDataUsingDataContractCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2558.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class GetDataUsingDataContractCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -1416,15 +1454,19 @@ namespace OOAD_Final_Project.server {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2558.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
     public delegate void addUserCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2558.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
+    public delegate void addAdminCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
     public delegate void getUserBYEmailCompletedEventHandler(object sender, getUserBYEmailCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2558.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class getUserBYEmailCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -1446,11 +1488,11 @@ namespace OOAD_Final_Project.server {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2558.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
     public delegate void getRecipeATCompletedEventHandler(object sender, getRecipeATCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2558.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class getRecipeATCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -1472,11 +1514,11 @@ namespace OOAD_Final_Project.server {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2558.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
     public delegate void getUserBYUsernameCompletedEventHandler(object sender, getUserBYUsernameCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2558.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class getUserBYUsernameCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -1498,11 +1540,11 @@ namespace OOAD_Final_Project.server {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2558.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
     public delegate void getAllUsersCompletedEventHandler(object sender, getAllUsersCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2558.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class getAllUsersCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -1524,11 +1566,11 @@ namespace OOAD_Final_Project.server {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2558.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
     public delegate void getUsersCountCompletedEventHandler(object sender, getUsersCountCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2558.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class getUsersCountCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -1558,15 +1600,15 @@ namespace OOAD_Final_Project.server {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2558.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
     public delegate void addRecipeCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2558.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
     public delegate void getRecipesCompletedEventHandler(object sender, getRecipesCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2558.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class getRecipesCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -1588,11 +1630,11 @@ namespace OOAD_Final_Project.server {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2558.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
     public delegate void getRecipeCountCompletedEventHandler(object sender, getRecipeCountCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2558.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class getRecipeCountCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -1622,15 +1664,41 @@ namespace OOAD_Final_Project.server {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2558.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
     public delegate void addCategoryCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2558.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
+    public delegate void generateDietPlanCompletedEventHandler(object sender, generateDietPlanCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class generateDietPlanCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal generateDietPlanCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public User Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((User)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
     public delegate void getAllCategoriesCompletedEventHandler(object sender, getAllCategoriesCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2558.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class getAllCategoriesCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -1652,35 +1720,31 @@ namespace OOAD_Final_Project.server {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2558.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
     public delegate void deleteRecipeCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2558.0")]
-    public delegate void generateDietPlanCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2558.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
     public delegate void deleteUserCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2558.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
     public delegate void deleteCategoryCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2558.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
     public delegate void updateCategoryCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2558.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
     public delegate void updateUserCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2558.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
     public delegate void getRandomRecipeCompletedEventHandler(object sender, getRandomRecipeCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2558.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class getRandomRecipeCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -1702,11 +1766,37 @@ namespace OOAD_Final_Project.server {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2558.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
+    public delegate void getRandomRecipeByCateegoryCompletedEventHandler(object sender, getRandomRecipeByCateegoryCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class getRandomRecipeByCateegoryCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal getRandomRecipeByCateegoryCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public recipe Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((recipe)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
     public delegate void updateRecipeCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2558.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
     public delegate void save_user_settingsCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
 }
 

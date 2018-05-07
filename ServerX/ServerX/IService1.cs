@@ -25,7 +25,10 @@ namespace ServerX
         // ******** USERDL FUNCTIONS ******** \\
 
         [OperationContract]
-        void addUser(string name, string email, string password, string phone);
+        void addUser(string name, string email, string password, string phone, string profile);
+
+        [OperationContract]
+        void addAdmin(string name, string email, string password, string phone);
 
         [OperationContract]
         User getUserBYEmail(string email);
@@ -44,7 +47,7 @@ namespace ServerX
         int getUsersCount();
 
         [OperationContract]
-        void addRecipe(string title, string author, string date, string url, string desc, List<string> categories);
+        void addRecipe(string title, string author, string date, string url, string desc, List<string> categories, string thumb);
 
         [OperationContract]
         List<recipe> getRecipes();
@@ -56,13 +59,13 @@ namespace ServerX
         void addCategory(string c_name);
 
         [OperationContract]
+        User generateDietPlan(User user);
+
+        [OperationContract]
         List<category> getAllCategories();
 
         [OperationContract]
         void deleteRecipe(string index);
-
-        [OperationContract]
-        void generateDietPlan(User user);
 
         [OperationContract]
         void deleteUser(string index);
@@ -78,6 +81,8 @@ namespace ServerX
 
         [OperationContract]
         recipe getRandomRecipe();
+        [OperationContract]
+        recipe getRandomRecipeByCateegory(string category);
 
         [OperationContract]
         void updateRecipe(string index, string title, string author, string date, string url, string desc, List<string> categories);

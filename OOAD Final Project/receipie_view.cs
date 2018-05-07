@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace OOAD_Final_Project
 {
@@ -23,12 +24,20 @@ namespace OOAD_Final_Project
             InitializeComponent();
         }
 
+        public Image byteArrayToImage(byte[] byteArrayIn)
+        {
+            MemoryStream ms = new MemoryStream(byteArrayIn);
+            Image returnImage = Image.FromStream(ms);
+            return returnImage;
+        }
+
         public receipie_view(server.recipe r, int index)
         {
             InitializeComponent();
             recipeTitle.Text = r.Title;
             this_recipe = r;
             this_index = index;
+            recipeImage.Image = Image.FromFile(r.Recipe_thumb);
         }
 
         private void bunifuFlatButton1_Click(object sender, EventArgs e)
@@ -48,6 +57,18 @@ namespace OOAD_Final_Project
             if(deleteRecipe != null){
                 deleteRecipe(this, EventArgs.Empty);
             }
+        }
+
+        private void recipeImage_Click(object sender, EventArgs e)
+        {
+            recipe_details_view dw = new recipe_details_view(this_recipe);
+            dw.Show();
+        }
+
+        private void recipeTitle_Click(object sender, EventArgs e)
+        {
+            recipe_details_view dw = new recipe_details_view(this_recipe);
+            dw.Show();
         }
     }
 }

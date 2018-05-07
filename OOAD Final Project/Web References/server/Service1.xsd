@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:import schemaLocation="http://localhost:2125/Service1.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/ServerX" />
-  <xs:import schemaLocation="http://localhost:2125/Service1.svc?xsd=xsd4" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:import schemaLocation="http://localhost:2125/Service1.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
   <xs:element name="GetData">
     <xs:complexType>
       <xs:sequence>
@@ -37,10 +37,26 @@
         <xs:element minOccurs="0" name="email" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="password" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="phone" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="profile" nillable="true" type="xs:string" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="addUserResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="addAdmin">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="email" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="password" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="phone" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="addAdminResponse">
     <xs:complexType>
       <xs:sequence />
     </xs:complexType>
@@ -120,6 +136,7 @@
         <xs:element minOccurs="0" name="url" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="desc" nillable="true" type="xs:string" />
         <xs:element xmlns:q7="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="categories" nillable="true" type="q7:ArrayOfstring" />
+        <xs:element minOccurs="0" name="thumb" nillable="true" type="xs:string" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -164,6 +181,20 @@
       <xs:sequence />
     </xs:complexType>
   </xs:element>
+  <xs:element name="generateDietPlan">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/ServerX" minOccurs="0" name="user" nillable="true" type="q9:User" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="generateDietPlanResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/ServerX" minOccurs="0" name="generateDietPlanResult" nillable="true" type="q10:User" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="getAllCategories">
     <xs:complexType>
       <xs:sequence />
@@ -172,7 +203,7 @@
   <xs:element name="getAllCategoriesResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/ServerX" minOccurs="0" name="getAllCategoriesResult" nillable="true" type="q9:ArrayOfcategory" />
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/ServerX" minOccurs="0" name="getAllCategoriesResult" nillable="true" type="q11:ArrayOfcategory" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -184,18 +215,6 @@
     </xs:complexType>
   </xs:element>
   <xs:element name="deleteRecipeResponse">
-    <xs:complexType>
-      <xs:sequence />
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="generateDietPlan">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/ServerX" minOccurs="0" name="user" nillable="true" type="q10:User" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="generateDietPlanResponse">
     <xs:complexType>
       <xs:sequence />
     </xs:complexType>
@@ -261,7 +280,21 @@
   <xs:element name="getRandomRecipeResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/ServerX" minOccurs="0" name="getRandomRecipeResult" nillable="true" type="q11:recipe" />
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/ServerX" minOccurs="0" name="getRandomRecipeResult" nillable="true" type="q12:recipe" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getRandomRecipeByCateegory">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="category" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getRandomRecipeByCateegoryResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/ServerX" minOccurs="0" name="getRandomRecipeByCateegoryResult" nillable="true" type="q13:recipe" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -274,7 +307,7 @@
         <xs:element minOccurs="0" name="date" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="url" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="desc" nillable="true" type="xs:string" />
-        <xs:element xmlns:q12="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="categories" nillable="true" type="q12:ArrayOfstring" />
+        <xs:element xmlns:q14="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="categories" nillable="true" type="q14:ArrayOfstring" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -286,7 +319,7 @@
   <xs:element name="save_user_settings">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/ServerX" minOccurs="0" name="u" nillable="true" type="q13:User" />
+        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/ServerX" minOccurs="0" name="u" nillable="true" type="q15:User" />
         <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="email" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="password" nillable="true" type="xs:string" />

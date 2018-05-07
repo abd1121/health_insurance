@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace OOAD_Final_Project
 {
@@ -20,6 +21,12 @@ namespace OOAD_Final_Project
         {
             InitializeComponent();
 
+            username.Text = myUtil.loggedIN.Name;
+            if(myUtil.loggedIN.UserProfilePic != null)
+            {
+                userProfile.Image = Image.FromFile(myUtil.loggedIN.UserProfilePic);
+            }
+
             user_dashboard r = user_dashboard.Instance;
             if (!container.Controls.Contains(r))
             {
@@ -31,16 +38,42 @@ namespace OOAD_Final_Project
                 r.BringToFront();
             }
             r.whatEatClick += OnwhatEatClick;
+            r.AdvanceClick += OnAdvanceClick;
+        }
+
+        public void OnAdvanceClick(object source, EventArgs e)
+        {
+            user_advance_search frm = new user_advance_search();
+            frm.Show();
+            frm.whatEatClick += OnwhatEatClickadvance;
+        }
+
+        public void OnwhatEatClickadvance(object source, AdvanceWhatEatEventArgs e)
+        {
+            register_user_diet r = new register_user_diet();
+            if (!container.Controls.Contains(r))
+            {
+                container.Controls.Add(r);
+                r.BringToFront();
+            }
+            else
+            {
+                r.BringToFront();
+            }
+        }
+
+        public Image byteArrayToImage(byte[] byteArrayIn)
+        {
+            MemoryStream ms = new MemoryStream(byteArrayIn);
+            Image returnImage = Image.FromStream(ms);
+            return returnImage;
         }
 
         public static userUC Instance
         {
             get
             {
-                if(_instance == null)
-                {
-                    _instance = new userUC();
-                }
+                _instance = new userUC();
                 return _instance;
             }
         }
@@ -65,6 +98,20 @@ namespace OOAD_Final_Project
         }
 
         public void OnwhatEatClick(object source, EventArgs e) {
+            register_user_diet r = new register_user_diet();
+            if (!container.Controls.Contains(r))
+            {
+                container.Controls.Add(r);
+                r.BringToFront();
+            }
+            else
+            {
+                r.BringToFront();
+            }
+        }
+
+        public void OnwhatRandomEatClick(object source, EventArgs e)
+        {
             register_user_diet r = new register_user_diet();
             if (!container.Controls.Contains(r))
             {

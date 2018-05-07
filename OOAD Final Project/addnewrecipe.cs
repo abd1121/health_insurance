@@ -13,6 +13,7 @@ namespace OOAD_Final_Project
 {
     public partial class addnewrecipe : Form
     {
+        string destination;
         public delegate void AddRecipeBtnClickEventHandler(object source, EventArgs e);
         public event AddRecipeBtnClickEventHandler AddRecipeBtnClick;
         server.Service1 myServer = new server.Service1();
@@ -52,6 +53,13 @@ namespace OOAD_Final_Project
 
         }
 
+        public static byte[] imageToBytes(Image x)
+        {
+            ImageConverter _imageConverter = new ImageConverter();
+            byte[] xByte = (byte[])_imageConverter.ConvertTo(x, typeof(byte[]));
+            return xByte;
+        }
+
         private void addRecipeBtn_Click(object sender, EventArgs e)
         {
             string title = titletxtbox.Text;
@@ -65,13 +73,10 @@ namespace OOAD_Final_Project
                 categories.Add(item.ToString());
             }
             Image recipe_thubmnail = pictureView.Image;
-            var recipe_thubmnail_stream = new MemoryStream();
-            recipe_thubmnail.Save(recipe_thubmnail_stream, ImageFormat.Png);
-            recipe_thubmnail_stream.Position = 0;
 
             if(this_recipe == null)
             {
-                myServer.addRecipe(title, author, date, url, desc, categories.ToArray());
+                myServer.addRecipe(title, author, date, url, desc, categories.ToArray(), destination);
             }
             else
             {
@@ -93,6 +98,18 @@ namespace OOAD_Final_Project
             {
                 AddRecipeBtnClick(this, EventArgs.Empty);
             }
+        }
+
+        private void chooseImageBtn_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog op = new OpenFileDialog();
+            if (op.ShowDialog() == DialogResult.OK)
+            {
+                pictureView.Image = Image.FromStream(op.OpenFile());
+            }
+            
+            destination = @"F:\Github Project\health_insurance\images\" + Path.GetFileName(op.FileName);
+            File.Copy(op.FileName, destination);
         }
     }
 }

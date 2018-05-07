@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace OOAD_Final_Project
 {
@@ -20,6 +21,17 @@ namespace OOAD_Final_Project
         {
             InitializeComponent();
             username.Text = myUtil.loggedIN.Name;
+            if(myUtil.loggedIN.UserProfilePic != null)
+            {
+                userProfile.Image = Image.FromFile(myUtil.loggedIN.UserProfilePic);
+            }
+        }
+
+        public Image byteArrayToImage(byte[] byteArrayIn)
+        {
+            MemoryStream ms = new MemoryStream(byteArrayIn);
+            Image returnImage = Image.FromStream(ms);
+            return returnImage;
         }
 
         public static AdminUC Instance
@@ -116,9 +128,7 @@ namespace OOAD_Final_Project
 
         private void advertisersButton_Click(object sender, EventArgs e)
         {
-            btnActiveSide.Dock = advertisersButton.Dock;
-            btnActiveSide.Location = advertisersButton.Location;
-            btnActiveSide.BringToFront();
+            
         }
 
         private void logoutBtn_Click(object sender, EventArgs e)

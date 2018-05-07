@@ -44,6 +44,7 @@
             this.bunifuCards1.color = System.Drawing.Color.Tomato;
             this.bunifuCards1.Controls.Add(this.recipeTitle);
             this.bunifuCards1.Controls.Add(this.recipeImage);
+            this.bunifuCards1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.bunifuCards1.LeftSahddow = false;
             this.bunifuCards1.Location = new System.Drawing.Point(0, 0);
             this.bunifuCards1.Name = "bunifuCards1";
@@ -55,21 +56,26 @@
             // recipeTitle
             // 
             this.recipeTitle.AutoSize = true;
+            this.recipeTitle.Cursor = System.Windows.Forms.Cursors.Hand;
             this.recipeTitle.Font = new System.Drawing.Font("Century Gothic", 10.25F);
             this.recipeTitle.Location = new System.Drawing.Point(3, 119);
             this.recipeTitle.Name = "recipeTitle";
             this.recipeTitle.Size = new System.Drawing.Size(174, 19);
             this.recipeTitle.TabIndex = 2;
             this.recipeTitle.Text = "Receipie Title Goes Here";
+            this.recipeTitle.Click += new System.EventHandler(this.recipeClickEvent);
             // 
             // recipeImage
             // 
+            this.recipeImage.Cursor = System.Windows.Forms.Cursors.Hand;
             this.recipeImage.Image = ((System.Drawing.Image)(resources.GetObject("recipeImage.Image")));
             this.recipeImage.Location = new System.Drawing.Point(3, 8);
             this.recipeImage.Name = "recipeImage";
             this.recipeImage.Size = new System.Drawing.Size(179, 108);
+            this.recipeImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.recipeImage.TabIndex = 1;
             this.recipeImage.TabStop = false;
+            this.recipeImage.Click += new System.EventHandler(this.recipeClickEvent);
             // 
             // search_bottom_grid
             // 

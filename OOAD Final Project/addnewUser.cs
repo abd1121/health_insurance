@@ -7,11 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace OOAD_Final_Project
 {
     public partial class addnewUser : Form
     {
+        string destination;
         public delegate void useraddedEventHandler(object source, EventArgs e);
         public event useraddedEventHandler useradded;
 
@@ -47,6 +49,13 @@ namespace OOAD_Final_Project
             this.Hide();
         }
 
+        public static byte[] imageToBytes(Image x)
+        {
+            ImageConverter _imageConverter = new ImageConverter();
+            byte[] xByte = (byte[])_imageConverter.ConvertTo(x, typeof(byte[]));
+            return xByte;
+        }
+
         private void loginMenuButton_Click(object sender, EventArgs e)
         {
             string name = nametxtbox.Text;
@@ -54,10 +63,12 @@ namespace OOAD_Final_Project
             string password = passtxtbox.Text;
             string username = usernametxtbox.Text;
             string phone = phonetxtbox.Text;
+            Image profile_image = pictureView.Image;
+            
 
-            if(this_user == null)
+            if (this_user == null)
             {
-                myserver.addUser(name, email, password, phone);
+                myserver.addUser(name, email, password, phone, destination);
             }
             else
             {
@@ -75,6 +86,8 @@ namespace OOAD_Final_Project
             {
                 pictureView.Image = Image.FromStream(op.OpenFile());
             }
+            destination = @"F:\Github Project\health_insurance\images\" + Path.GetFileName(op.FileName);
+            File.Copy(op.FileName, destination);
         }
 
         public void Onuseradded()

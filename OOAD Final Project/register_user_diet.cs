@@ -12,6 +12,7 @@ namespace OOAD_Final_Project
 {
     public partial class register_user_diet : UserControl
     {
+        string this_category;
         public register_user_diet()
         {
             InitializeComponent();
@@ -20,6 +21,19 @@ namespace OOAD_Final_Project
             for (int i = 0; i < 4; ++i)
             {
                 search_bottom_grid sb = new search_bottom_grid();
+                relatedSuggetionsContainer.Controls.Add(sb);
+            }
+        }
+
+        public register_user_diet(string category)
+        {
+            InitializeComponent();
+            this_category = category;
+            search_top_grid s = new search_top_grid(this_category);
+            top_container.Controls.Add(s);
+            for (int i = 0; i < 4; ++i)
+            {
+                search_bottom_grid sb = new search_bottom_grid(this_category);
                 relatedSuggetionsContainer.Controls.Add(sb);
             }
         }

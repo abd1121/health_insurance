@@ -78,6 +78,14 @@ namespace OOAD_Final_Project
                 server.User user = new server.User();
                 user = myServer.getUserBYEmail(email);
                 myUtil.loggedIN = user;
+                if(myUtil.loggedIN.DietPlan != null)
+                {
+                    MessageBox.Show("Janu Diet Plan Pehle se Hai");
+                }
+                else
+                {
+                    MessageBox.Show("nananana");
+                }
                 if (user != null)
                 {
                     if (user.Password == password)
